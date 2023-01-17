@@ -103,3 +103,59 @@ lambda
 #             continue
 #         print(lst[i][j],end=' ')
 # 해당 수를 제외하고 출력
+
+# 함수 내장, 외장, 사용자
+# lst = [1,2,3,4,5]
+# print(len(lst))
+# print(sum(lst))
+# print(max(lst))
+# print(sorted(lst))
+
+# a = 'Z'
+# print(ord(a))
+
+# a = 97
+# print(chr(a))
+
+# a='2' 를 정수 2로 바꾼 후 10을 더한 값을 출력
+
+# a = '2'
+# print(ord(a)-ord('0') + 10)
+
+# a = -3
+# print(abs(a))   # 절대값
+# print(id(a))    # 주소값
+# print(pow(3,2)) # 3의 2제곱
+
+# import random
+# a=[1,2,3,4,5,6,7]
+# print(random.sample(a,2))
+
+memo={0:0,1:1}
+def fibonacci(n):
+    if n in memo:
+        return memo[n]
+    memo[n] = fibonacci(n-1)+fibonacci(n-2)
+    return memo[n]
+
+# def getsum(a:int,b:int):    # tuple을 이용 값 두개 반환
+#     return a+b,a*b
+
+
+# ret=getsum(5,6)
+# print(ret)
+# print(type(ret))
+
+# sum1=0
+# gop1=0
+
+# def getsum2(a,b):
+#     global sum1,gop1
+#     sum1=a+b
+#     gop1=a*b
+
+# getsum2(5,6)
+# print(sum1, gop1)
+
+
+

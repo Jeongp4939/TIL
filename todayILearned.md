@@ -3,7 +3,7 @@
 ## **목차**
 ---
 <details>
-<summary> 23.01.16 </summary>
+<summary> 목차 </summary>
 
 - [프로그래밍(Programming)](#프로그래밍programming)
     - [프로그래밍 언어란?](#프로그래밍-언어란)
@@ -20,6 +20,9 @@
 </details>
 
 --- 
+
+<details>
+<summary> 23.01.16 </summary>
 
 # **23.01.16**
 
@@ -283,11 +286,22 @@
 ```
 
 </details>
+</details>
 
+
+---
+
+<details>
+<summary>23.01.17</summary>
 
 # **23.01.17**
 
+<details>
+<summary>제어문</summary>
+
+
 ## **제어문**
+
 - 순차, 선택, 반복
 - 파이썬은 기본적으로 위에서부터 아래로 차례대로 명령을 수행
 - 특정 상황에 따라 코드를 선택적으로 실행(분기/조건) 하거나 계속하여 실행(반복)하는 제어가 필요
@@ -300,6 +314,11 @@
         - <font color='red'>주의!</font> 한 코드 안에서는 반드시 한 종류의 들여쓰기를 사용
     - Tab으로 들여쓰면 계속 탭으로 들여써야 함
     - 원칙적으로 공백(빈칸, space) 사용을 권장 *PEP8 권장사항
+
+</details>
+
+<details>
+<summary>조건문</summary>
 
 ## **조건문(Conditional Statement)**
 - 조건문은 참/거짓을 판단할 수 있는 조건식과 함께 사용
@@ -332,7 +351,14 @@
     result='홀수입니다' if num%2 else '짝수입니다'
     # 짝수 홀수 판단
     ```
+
+</details>
+
+<details>
+<summary>반복문</summary>
+
 ## **반복문**
+
 - 특정 조건을 만족할 때까지 동작을 계속 반복하고 싶을 때 사용
 ### 반복문의 종류
 - while문
@@ -391,3 +417,7 @@ print('끝')
     - break를 통해 중간에 종료되는 경우 else문은  실행되지 않음
 - pass
     - 아무것도 하지 않음(문법적으로 필요하지만, 할 일이 없을 때 사용)
+
+</details>
+
+</details>
