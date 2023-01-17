@@ -1,15 +1,15 @@
-orders = '아이스아메리카노,카라멜마키야또,에스프레소,아메리카노,아메리카노,아이스라떼,핫초코,아이스아메리카노,아메리카노,아이스카라멜마키야또,아이스라떼,라떼마키야또,카푸치노,라떼마키야또'
-orders = list(orders.split(','))
+# orders = '아이스아메리카노,카라멜마키야또,에스프레소,아메리카노,아메리카노,아이스라떼,핫초코,아이스아메리카노,아메리카노,아이스카라멜마키야또,아이스라떼,라떼마키야또,카푸치노,라떼마키야또'
+# orders = list(orders.split(','))
 
-order_set = list(set(orders))
-cnt = 0
-for i in order_set:
-    cnt += orders.count(i)
-    while i in orders:
-        orders.remove(i)
+# order_set = list(set(orders))
+# cnt = 0
+# for i in order_set:
+#     cnt += orders.count(i)
+#     while i in orders:
+#         orders.remove(i)
         
-print(f'총 {cnt}잔')
-print(sorted(order_set,reverse=True))
+# print(f'총 {cnt}잔')
+# print(sorted(order_set,reverse=True))
 
 
 # orders = '아이스아메리카노,카라멜마키야또,에스프레소,아메리카노,아메리카노,아이스라떼,핫초코,아이스아메리카노,아메리카노,아이스카라멜마키야또,아이스라떼,라떼마키야또,카푸치노,라떼마키야또'
@@ -122,12 +122,47 @@ print(sorted(order_set,reverse=True))
 
 # 딕셔너리 생성
 
-students = ['박해피','이영희','조민지','조민지','김철수','이영희','이영희','김해킹','박해피','김철수',
-    '한케이','강디티','조민지','박해피','김철수','이영희','박해피','김해킹','박해피','한케이','강디티',]
-students_dic={}
-for i in students:
-    if i in students_dic:
-        students_dic[i]+=1
-    else:
-        students_dic[i]=0
-print(sorted(students_dic.items(),key=lambda item:item[1], reverse=True))
+# students = ['박해피','이영희','조민지','조민지','김철수','이영희','이영희','김해킹','박해피','김철수',
+#     '한케이','강디티','조민지','박해피','김철수','이영희','박해피','김해킹','박해피','한케이','강디티',]
+# students_dic={}
+# for i in students:
+#     if i in students_dic:
+#         students_dic[i]+=1
+#     else:
+#         students_dic[i]=0
+# print(sorted(students_dic.items(),key=lambda item:item[1], reverse=True))
+
+
+
+# # 입력 예시
+# lst = [1, 1, 3, 3, 0, 1, 1]
+
+# # 출력 예시
+# # [1, 3, 0, 1]
+
+# new_lst = []
+
+# for i in lst:
+#     if not new_lst:
+#         new_lst.append(i)
+#     if new_lst[-1]==i:
+#         continue
+#     else:
+#         new_lst.append(i)
+# print(new_lst)
+
+word1 = input()
+word2 = input()
+
+cnt1 = 0
+cnt2 = 0
+
+for w1 in word1:
+    cnt1+=ord(w1)
+for w2 in word2:
+    cnt2+=ord(w2)
+
+if cnt1>cnt2:
+    print(word1)
+else:
+    print(word2)
