@@ -151,18 +151,69 @@
 #         new_lst.append(i)
 # print(new_lst)
 
-word1 = input()
-word2 = input()
+# word1 = input()
+# word2 = input()
 
-cnt1 = 0
-cnt2 = 0
+# cnt1 = 0
+# cnt2 = 0
 
-for w1 in word1:
-    cnt1+=ord(w1)
-for w2 in word2:
-    cnt2+=ord(w2)
+# for w1 in word1:
+#     cnt1+=ord(w1)
+# for w2 in word2:
+#     cnt2+=ord(w2)
 
-if cnt1>cnt2:
-    print(word1)
-else:
-    print(word2)
+# if cnt1>cnt2:
+#     print(word1)
+# else:
+#     print(word2)
+
+# test_status = {
+#     '김싸피': 'solving',
+#    	'이코딩': 'solving',
+#    	'최이썬': 'cheating',
+#    	'오디비': 'sleeping',
+#    	'임온실': 'cheating',
+#    	'조실습': 'solving',
+#    	'박장고': 'sleeping',
+#    	'염자바': 'cheating'
+# }
+
+# key_lst = list(test_status.keys())
+# get_out = []
+
+# for i in key_lst:
+#     if test_status[i]=='solving':
+#         continue
+#     elif test_status[i]=='cheating':
+#         get_out.append(i)
+#         del test_status[i]
+#     elif test_status[i]=='sleeping':
+#         test_status[i] = 'solving'
+# print(sorted(get_out))
+# print(test_status)
+
+
+# words = ["round" , "dream", "magnet" , "tweet" , "tweet", "trick", "kiwi"]
+
+# for i in range(1,len(words)):
+#     if words[i-1][-1] != words[i][0] or words[i] in words[:i]:
+#         print(f'{i+1}번째 사람')
+#         break
+
+
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+dic = {}
+
+for i in words:
+    if str(sorted(i)) not in dic:   # dic 안에 없으면 추가
+        dic[str(sorted(i))] = str(i)
+    elif str(sorted(i)) in dic:     # dic 안에 있으면 단어 추가
+        dic[str(sorted(i))] += ','+str(i)
+print(dic)
+    
+        
+            
+            
+        
+    
+            
