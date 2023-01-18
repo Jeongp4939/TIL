@@ -201,19 +201,35 @@
 #         break
 
 
-words = ["eat", "tea", "tan", "ate", "nat", "bat"]
-dic = {}
+# words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# dic = {}
 
-for i in words:
-    if str(sorted(i)) not in dic:   # dic 안에 없으면 추가
-        dic[str(sorted(i))] = str(i)
-    elif str(sorted(i)) in dic:     # dic 안에 있으면 단어 추가
-        dic[str(sorted(i))] += ','+str(i)
-print(dic)
+# for i in words:
+#     if str(sorted(i)) not in dic:   # dic 안에 없으면 추가
+#         dic[str(sorted(i))] = str(i)
+#     elif str(sorted(i)) in dic:     # dic 안에 있으면 단어 추가
+#         dic[str(sorted(i))] += ','+str(i)
+# print(dic)
     
-        
-            
-            
-        
-    
-            
+
+# print(locals())
+# print(globals())
+
+
+def making_card_list() -> list:
+	card_list = []
+
+	for shape in ["spade", "heart", "diamond", "clover"]:
+
+		for number in ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]:
+
+			card_list.append((shape, number))
+
+	return card_list
+
+
+trump_card_list = making_card_list()
+
+import random
+random.shuffle(trump_card_list)
+print(trump_card_list)
