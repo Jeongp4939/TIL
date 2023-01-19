@@ -216,20 +216,192 @@
 # print(globals())
 
 
-def making_card_list() -> list:
-	card_list = []
+# 알파벳은 숫자보다 가치가 높다->한쪽만 알파벳이면 승리
+# 알파벳 가치 J<Q<K<A
+# 문양가치 spade>diamond>heart>clover
 
-	for shape in ["spade", "heart", "diamond", "clover"]:
+# def making_card_list() -> list:
+# 	card_list = []
 
-		for number in ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]:
+# 	for shape in ["spade", "heart", "diamond", "clover"]:
 
-			card_list.append((shape, number))
+# 		for number in ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]:
 
-	return card_list
+# 			card_list.append((shape, number))
+
+# 	return card_list
 
 
-trump_card_list = making_card_list()
+# trump_card_list = making_card_list()
 
-import random
-random.shuffle(trump_card_list)
-print(trump_card_list)
+# import random
+
+# def card_game():
+#     random.shuffle(trump_card_list)
+#     card_cnt=len(trump_card_list)
+#     cnt1, cnt2 =0,0
+#     while cnt1<6 and cnt2<6:                                            # 둘 중 하나라도 6 이상이 되면 종료
+#         Player1 = trump_card_list[random.randrange(0,card_cnt)]
+#         trump_card_list.remove(Player1)
+#         card_cnt-=1
+#         Player2 = trump_card_list[random.randrange(0,card_cnt)]
+#         trump_card_list.remove(Player2)
+#         card_cnt-=1
+
+        
+#         if str(Player1[1]) == str(Player2[1]):                          # 문양이나 숫자가 같은 경우 먼저 확인
+#             if Player1[0]=='spade' and Player2[0]!='spade':             # spade>diamond>heart>clover
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif Player1[0]=='diamond' and Player2[0] not in ['spade']: # 카드의 중복은 없으므로 문자가 같을 때 다른것만 확인
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif Player1[0]=='heart' and Player2[0] not in ['spade','diamond']:
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             else:
+#                 print(f'{Player1} {Player2} Player2 Win!')
+#                 cnt2+=1
+#         elif str(Player1[1]).isalpha() or str(Player2[1]).isalpha():
+#             if str(Player1[1]).isalpha() and not str(Player2[1]).isalpha(): # 한명만 문자인 경우 승리
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif not str(Player1[1]).isalpha() and str(Player2[1]).isalpha():
+#                 print(f'{Player1} {Player2} Player2 Win!')
+#                 cnt2+=1
+#             elif str(Player1[1]) =='A' and str(Player2[1])!='A':            # 1이 A인 경우 2가 A가 아니면 1이 승리
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif str(Player1[1]) =='K' and str(Player2[1]) not in ['A']:
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif str(Player1[1]) =='Q' and str(Player2[1]) not in ['A','K']:
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             else:
+#                 print(f'{Player1} {Player2} Player2 Win!')
+#                 cnt2+=1
+#         else:                                                           # 둘 다 알파벳이 아닌 경우 숫자 비교
+#             if Player1[1]>Player2[1]:
+#                 print(f'{Player1} {Player2} Player1 Win!')
+#                 cnt1+=1
+#             elif Player2[1]>Player1[1]:
+#                 print(f'{Player1} {Player2} Player2 Win!')
+#                 cnt2+=1
+#     print(f'{cnt1}:{cnt2} Finally plyer1 win') if cnt1>cnt2 else print(f'{cnt1}:{cnt2} Finally plyer2 win')
+
+# card_game()
+
+
+
+# calc 만들기
+
+# import calc
+
+# def add(a,b):
+#     return a+b
+# def sub(a,b):
+#     return a-b
+# def mul(a,b):
+#     return a*b
+# def div(a,b):
+#     try:
+#         return a/b
+#     except ZeroDivisionError:
+#         print('0으로 나눌 수 없습니다.')
+
+# print(calc.add(2, 3)) # 5
+# print(calc.sub(2, 3)) # -1
+# print(calc.mul(2, 3)) # 6
+# print(calc.div(2, 3)) # 0.6666666666666666
+
+# print(calc.div(2, 0)) # 0으로 나눌 수 없습니다.
+
+# 입력 예시
+# s = '@#~I NeVEr DrEamEd AbouT SuCCeSs, i woRkEd foR iT.!>!'
+
+# 출력 예시
+# 'I never dreamed about success, i worked for it.'
+
+# new_s =''
+# for ch in s:
+#     if ch.isalpha() or ch in [' ',',','.']:
+#         new_s+=ch
+# new_s=new_s[0]+new_s[1:].lower()
+# print(new_s)
+
+
+# num_list = [4, 4, 7, 8, 10, 4]
+# sum_of_repeat_number(num_list)
+
+# 출력 예시 
+#  25
+
+
+# def sum_of_repeat_number(arr):
+#     lst=[]
+#     result = 0
+#     while arr:
+#         lst.append(arr.pop())
+#         if lst[-1] in arr:
+#             while lst[-1] in arr:
+#                 arr.remove(lst[-1])
+#             lst.pop()
+#     while lst:
+#         result+=lst.pop()
+#     print(result)
+        
+        
+# num_list = [4, 4, 7, 8, 10, 4]
+# # num_list = list(map(int,input().split()))
+# sum_of_repeat_number(num_list)
+
+
+# words_dict = {'proper' : '적절한',
+# 'possible' : '가능한',
+# 'moral' : '도덕적인',
+# 'patient' : '참을성 있는',
+# 'balance' : '균형',
+# 'perfect' : '완벽한',
+# 'logical' : '논리적인',
+# 'legal' : '합법적인',
+# 'relevant' : '관련 있는',
+# 'responsible' : '책임감 있는',
+# 'regular' : '규칙적인'}
+
+# def antonym(**kwargs):
+#     words = list(kwargs.keys())
+#     antonyms=[]
+#     for word in words:
+#         if word[0] in ['b','m','p']:
+#             word = 'im'+ word
+#         elif word[0] == 'l':
+#             word = 'il'+word
+#         elif word[0] == 'r':
+#             word = 'ir'+word
+#         else:
+#             word = 'in'+word
+#         antonyms.append(word)
+    
+#     return antonyms
+
+# print(sorted(antonym(**words_dict),reverse=True))
+
+
+# 입력 예시
+# 2015
+# 8
+# 31
+
+# 출력 예시 
+# 경고 월요일입니다.
+# {'년': 2015, '월': 8, '일': 31, '요일': '월요일'}
+
+import calendar
+cal = calendar.Calendar(firstweekday=6)
+calendar.TextCalendar.formatyear(cal,2023,w=2, l=1, c=6, m=3)
+calendar.TextCalendar.pryear(cal,2023,w=2, l=1, c=6, m=3)
+# date=''
+# for _ in range(3):
+#     date += input()
+

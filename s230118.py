@@ -303,4 +303,26 @@ print(id(lst),id(lst2))
 print(id(lst[0]),id(lst2[0]))
 print()
 
+words=['','','','']
 
+x=[]
+y=[]
+for i in range(1,len(words)):
+    if words[i-1][-1]!=words[i][0]:
+        print(words[i])
+        break
+    
+for i in range(0,len(words)):
+    if i>0:
+        if words[i-1][-1]!=words[i][0]:
+            print(words[i])
+            break
+        
+for i in words:
+    if i not in x:
+        x.append(i)
+    else:
+        if i not in y:
+            y.append(i)
+            break
+print(y)
