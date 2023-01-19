@@ -55,4 +55,3 @@
 # print(f'+ VAT{VAT:>10,}')
 # print(f'총계 ₩{(steak+VAT):>10,}')
 
-
