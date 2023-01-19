@@ -313,10 +313,96 @@
 # else:
 #     print('M이 존재하지 않습니다')
 
-a,b,c = map(int,input().split())
+# a,b,c = map(int,input().split())
 
-for i in range(c):
-    print(*range(a,b+1))
+# for i in range(c):
+#     print(*range(a,b+1))
         
+# arr = [[0 for _ in range(3)] for _ in range(6)]
+# cnt = 65
+# for i in range(2,-1,-1):
+#     for j in range(5,-1,-1):
+#         arr[j][i]=chr(cnt)
+#         cnt+=1
+
+# row,col = map(int,input().split())
+
+# print(arr[row][col])
+
+# arr = [[0 for _ in range(3)] for _ in range(2)]
+# lst = list(map(int,input().split()))
+
+# max_n,min_n=lst.index(max(lst)),lst.index(min(lst))
+
+# print(f'({max_n//3},{max_n%3}),({min_n//3},{min_n%3})')
+
+# arr = [0 for _ in range(6)]
+# arr[0],arr[1] = map(int,input().split())
+# for i in range(2,6):
+#     arr[i] = arr[i-1]*arr[i-2]
+# print(arr[-1])
+
+# s = input()
+
+# ch1=input()
+# ch2=input()
+
+# while ch1 in s:
+#     s=s.replace(ch1,ch2)
+# print(s)
+
+# s= input()
+# s_lst = sorted(list(s))
+
+# print(s.index(s_lst[-1]))
+# print(s.index(s_lst[0]))
+
+# arr=[[i+j*4 for i in range(1,5)] for j in range(7)]
+
+# n_list = list(map(int,input().split()))
+
+# for i in n_list:
+#     for j in range(4):
+#         arr[i][j]=0
+        
+# for line in arr:
+#     print(*line)
+
+# arr=[['A',7,9,'T','K','Q'],['M','I','N','C','O','D']]
+# a_flag=False
+# b_flag=False
+# a,b = input().split()
+# for i in arr:
+#     if a in i:
+#         a_flag=True
+#     if b in i:
+#         b_flag=True
+# print(f'{a} : 존재') if a_flag else print(f'{a} : 없음')
+# print(f'{b} : 존재') if b_flag else print(f'{b} : 없음')
+
+
+# s=list(input().split())
+# for i in range(int(s[0])):
+#     for J in range(int(s[1])):
+#         print(s[2],end='')
+#     print()
+# print()
+# for i in range(int(s[0])):
+#     for J in range(int(s[1])):
+#         print(s[2],end='')
+#     print()
+
+
+# arr = ['M','T','K','C']
+# c = input()
+# print('발견') if c in arr else print('미발견')
+
+arr = [5,9,4,6,1,5,8,9]
+
+idx,target = map(int,input().split())
+tg_idx = arr.index(target)
+print(f'{tg_idx-idx}') if tg_idx>=idx else print(f'{len(arr)-idx+tg_idx}')
+
+
 
 
