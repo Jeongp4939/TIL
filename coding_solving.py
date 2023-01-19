@@ -397,11 +397,45 @@
 # 경고 월요일입니다.
 # {'년': 2015, '월': 8, '일': 31, '요일': '월요일'}
 
-import calendar
-cal = calendar.Calendar(firstweekday=6)
-calendar.TextCalendar.formatyear(cal,2023,w=2, l=1, c=6, m=3)
-calendar.TextCalendar.pryear(cal,2023,w=2, l=1, c=6, m=3)
-# date=''
-# for _ in range(3):
-#     date += input()
+# import calendar
+
+# def time_machine():
+#     def year_ipt():
+#         year = int(input())
+#         if calendar.isleap(year):
+#             print('윤년입니다. 연도를 다시 입력해 주세요')    
+#             return year_ipt()
+#         return year
+#     year = year_ipt()
+#     print(calendar.calendar(theyear=year))
+#     day_of_week_lst = ['월요일','화요일','수요일','목요일','금요일','토요일','일요일']
+#     month = int(input())
+#     day = int(input())
+#     day_of_week=day_of_week_lst[calendar.weekday(year,month,day)]
+#     date_dic = {'년':year,'월':month,'일':day,'요일':day_of_week}
+#     if date_dic['요일']=='월요일':
+#         print('경고 월요일입니다.')
+#     return date_dic
+    
+# print(time_machine())
+
+generators={}
+
+def fn_d(n):
+    str_n = str(n)
+    sum_n=0
+    for i in str_n:
+        sum_n+=int(i)
+    return sum_n+n
+
+def is_selfnumber(n):
+    for i in range(1,n+1):
+        generators[i] = fn_d(i)
+    if n in generators.values():
+        return False
+    return True
+
+n = int(input())
+print(fn_d(n))
+print(is_selfnumber(n))
 

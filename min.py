@@ -254,5 +254,69 @@
 #     print()
 
 
+# result = ''
+
+# for _ in range(3):
+#     str_ipt = input()
+#     result+=str_ipt[-1]
+# print(result)
+
+# arr=[['A','B','K','T'],
+#      ['K','F','C','F'],
+#      ['B','B','Q','Q'],
+#      ['T','P','Z','F']]
+
+# a,b = map(str,input().split())
+# cnt = 0
+# for arr_line in arr:
+#     if a in arr_line:
+#         cnt += arr_line.count(a)
+#     if b in arr_line:
+#         cnt += arr_line.count(b)
+# print(cnt)
+
+# s = input()
+# n = int(input())
+
+# s = s[:n]+'A'+s[n:]
+# print(s)
+
+# A = list(map(int,input().split()))
+# B = list(map(int,input().split()))
+
+# result=[0 for _ in range(4)]
+
+# for i in range(4):
+#     result[i] = A[i]+B[3-i]
+
+# print(*result)
+
+# s = input()
+# n = int(input())
+
+# print(s[:n]+s[n+1:])
+
+# arr = list(map(int,input().split()))
+
+# for i in range(1,len(arr)):
+#     arr[i] += arr[i-1]
+
+# print(*arr) 
+
+# flag = False
+# for _ in range(3):
+#     if 'M' in input():
+#         flag = True
+
+# if flag:
+#     print('M이 존재합니다')
+# else:
+#     print('M이 존재하지 않습니다')
+
+a,b,c = map(int,input().split())
+
+for i in range(c):
+    print(*range(a,b+1))
+        
 
 
