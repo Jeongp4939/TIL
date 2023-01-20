@@ -397,12 +397,50 @@
 # c = input()
 # print('발견') if c in arr else print('미발견')
 
-arr = [5,9,4,6,1,5,8,9]
+# arr = [5,9,4,6,1,5,8,9]
 
-idx,target = map(int,input().split())
-tg_idx = arr.index(target)
-print(f'{tg_idx-idx}') if tg_idx>=idx else print(f'{len(arr)-idx+tg_idx}')
+# idx,target = map(int,input().split())
+# tg_idx = arr.index(target)
+# print(f'{tg_idx-idx}') if tg_idx>=idx else print(f'{len(arr)-idx+tg_idx}')
 
 
+# arr=[[3,5,9],[4,2,1],[1,1,5]]
+
+# marking = [list(map(int,input().split())) for _ in range(3)]
+
+# result = 0
+# for i in range(3):
+#     for j in range(3):
+#         if marking[i][j]==1:
+#             result+=arr[i][j]
+# print(result)
+
+
+# arr=[['A','T','K','B'],['C','Z','F','D'],['H','G','E','I']]
+
+# c,y,x=input().split()
+# x,y = int(x),int(y)
+# on_x,on_y = 0,0
+# for line in arr:
+#     if c in line:
+#         on_y, on_x = arr.index(line), line.index(c)
+# print(arr[on_y+y][on_x+x])
+
+# arr = [[3,5,9],[4,2,1],[5,1,5]]
+
+# a_flag,b_flag,c_flag = False,False,False
+# a,b,c=map(int,input().split())
+
+# for line in arr:
+#     if a in line:
+#         a_flag=True
+#     if b in line:
+#         b_flag=True
+#     if c in line:
+#         c_flag=True
+
+# print(f'{a}:존재') if a_flag else print(f'{a}:미발견')
+# print(f'{b}:존재') if b_flag else print(f'{b}:미발견')
+# print(f'{c}:존재') if c_flag else print(f'{c}:미발견')
 
 
