@@ -443,4 +443,68 @@
 # print(f'{b}:존재') if b_flag else print(f'{b}:미발견')
 # print(f'{c}:존재') if c_flag else print(f'{c}:미발견')
 
+# arr1 = [[0,0,0,1],[1,1,0,1],[1,0,0,1],[1,1,1,1]]
+# arr2 = [[1,1,1,1],[1,0,1,1],[1,0,0,0],[1,0,0,0]]
+# arr = [[0 for i in range(4)]for _ in range(4)]
 
+# for i in range(4):
+#     for j in range(4):
+#         arr[i][j]=(arr1[i][j] or arr2[i][j])
+
+# for i in range(4):
+#     for j in range(4):
+#         if arr[i][j] == 0:
+#             print(f'({i},{j})')
+
+# mask = [[0,0,1,0,0],[0,0,1,1,1]]
+# arr = [[3,5,4,1,1],[3,5,2,5,6]]
+
+# lst=[]
+
+# for i in range(len(mask)):
+#     for j in range(len(mask[i])):
+#         if mask[i][j]==1: lst.append(arr[i][j])
+
+# n = int(input())
+
+# print(f'{n} 존재') if n in lst else print(f'{n} 없음')
+
+# arr = ['B','T','K','I','G','Z']
+# target = list(input().split())
+# cnt = 0
+# for c in target:
+#     if c in arr:
+#         cnt+=1
+# print(cnt)
+
+# vect = [[3,7,4],[2,2,4],[2,2,5]]
+# target = list(map(int,input().split()))
+# cnt = [0,0,0]
+# for i in range(3):
+#     for line in vect:
+#         if target[i] in line:
+#             cnt[i]+=1
+# print(max(cnt))
+    
+# lst = [3,4,1,1,2,6,8,7,8,9,10]
+# def getSum(index,arr=lst):
+#     return sum(lst[index:index+5])
+
+# n = int(input())
+# print(getSum(n))
+    
+def isExist(n):
+    lst = [3,7,4,1,2,6]
+    result='OK' if n in lst else 'NO'
+    return result
+    
+arr = []
+for _ in range(2):
+    arr.append(list(map(int,input().split())))
+    
+for i in range(2):
+    for j in range(2):
+        arr[i][j] = isExist(arr[i][j])
+
+for line in arr:
+    print(*line)
