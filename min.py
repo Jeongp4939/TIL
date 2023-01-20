@@ -493,18 +493,65 @@
 # n = int(input())
 # print(getSum(n))
     
-def isExist(n):
-    lst = [3,7,4,1,2,6]
-    result='OK' if n in lst else 'NO'
-    return result
+# def isExist(n):
+#     lst = [3,7,4,1,2,6]
+#     result='OK' if n in lst else 'NO'
+#     return result
     
-arr = []
-for _ in range(2):
-    arr.append(list(map(int,input().split())))
+# arr = []
+# for _ in range(2):
+#     arr.append(list(map(int,input().split())))
     
-for i in range(2):
-    for j in range(2):
-        arr[i][j] = isExist(arr[i][j])
+# for i in range(2):
+#     for j in range(2):
+#         arr[i][j] = isExist(arr[i][j])
 
-for line in arr:
-    print(*line)
+# for line in arr:
+#     print(*line)
+
+# a=input()
+# b=input()
+
+# print('동명') if a==b else print('남남')
+
+# def isExist(ipt):
+#     lst = [['G','K','T'],['P','A','C']]
+#     result = 0
+#     for ls in lst:
+#         result+=ls.count(ipt[0])+ls.count(ipt[1])
+#     return result
+
+# A = list(input().split())
+# if isExist(A) == 2:
+#     print('대발견')
+# elif isExist(A) == 1:
+#     print('중발견')
+# else:
+#     print('미발견')
+
+
+# vect = [3,5,4,2,6,6,5]
+# bit = list(map(int,input().split()))
+
+# for i in range(len(vect)):
+#     vect[i]=7 if vect[i] and bit[i] else 0
+# for i in vect:
+#     print(i,end='')
+
+pw = [3,7,4,9]
+
+ipt = list(map(int,input().split()))
+cnt = 0
+for i in range(len(ipt)):
+    if ipt[i] == pw[i]:
+       cnt+=1 
+    else:
+        print('fail')
+        break
+    if cnt==4:
+        print('pass')
+
+
+
+
+
