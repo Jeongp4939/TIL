@@ -538,20 +538,28 @@
 # for i in vect:
 #     print(i,end='')
 
-pw = [3,7,4,9]
+# pw = [3,7,4,9]
 
-ipt = list(map(int,input().split()))
-cnt = 0
-for i in range(len(ipt)):
-    if ipt[i] == pw[i]:
-       cnt+=1 
-    else:
-        print('fail')
-        break
-    if cnt==4:
-        print('pass')
-
-
+# ipt = list(map(int,input().split()))
+# cnt = 0
+# for i in range(len(ipt)):
+#     if ipt[i] == pw[i]:
+#        cnt+=1 
+#     else:
+#         print('fail')
+#         break
+#     if cnt==4:
+#         print('pass')
 
 
+levelTable = [[10,20],[30,60],[100,150],[200,300]]
+level = {'lev0':0,'lev1':0,'lev2':0,'lev3':0}
+fruits = list(map(int,input().split()))
+
+for fruit in fruits:
+    for i in range(len(levelTable)):
+        if levelTable[i][0]<=fruit<=levelTable[i][1]:
+            level['lev'+str(i)] += 1
+for lev,cnt in level.items():
+    print(f'{lev}:{cnt}')
 
