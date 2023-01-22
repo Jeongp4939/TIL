@@ -552,14 +552,37 @@
 #         print('pass')
 
 
-levelTable = [[10,20],[30,60],[100,150],[200,300]]
-level = {'lev0':0,'lev1':0,'lev2':0,'lev3':0}
-fruits = list(map(int,input().split()))
+# levelTable = [[10,20],[30,60],[100,150],[200,300]]
+# level = {'lev0':0,'lev1':0,'lev2':0,'lev3':0}
+# fruits = list(map(int,input().split()))
 
-for fruit in fruits:
-    for i in range(len(levelTable)):
-        if levelTable[i][0]<=fruit<=levelTable[i][1]:
-            level['lev'+str(i)] += 1
-for lev,cnt in level.items():
-    print(f'{lev}:{cnt}')
+# for fruit in fruits:
+#     for i in range(len(levelTable)):
+#         if levelTable[i][0]<=fruit<=levelTable[i][1]:
+#             level['lev'+str(i)] += 1
+# for lev,cnt in level.items():
+#     print(f'{lev}:{cnt}')
+
+
+# 컬러 찾기
+
+def isExist(n, arr):
+    for line in arr:
+        if n in line:
+            return 'Y'
+    return 'N'
+
+map_n = [[3,55,42],[-5,-9,-10]]
+pix = []
+for _ in range(2):
+    pix.append(list(map(int,input().split())))
+for pix_line in pix:
+    for p in range(len(pix_line)):
+        pix_line[p] = isExist(pix_line[p],map_n)
+for line in pix:
+    print(*line)
+
+
+
+
 
