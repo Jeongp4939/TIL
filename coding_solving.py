@@ -419,23 +419,57 @@
     
 # print(time_machine())
 
-generators={}
+# generators={}
 
-def fn_d(n):
-    str_n = str(n)
-    sum_n=0
-    for i in str_n:
-        sum_n+=int(i)
-    return sum_n+n
+# def fn_d(n):
+#     str_n = str(n)
+#     sum_n=0
+#     for i in str_n:
+#         sum_n+=int(i)
+#     return sum_n+n
 
-def is_selfnumber(n):
-    for i in range(1,n+1):
-        generators[i] = fn_d(i)
-    if n in generators.values():
-        return False
-    return True
+# def is_selfnumber(n):
+#     for i in range(1,n+1):
+#         generators[i] = fn_d(i)
+#     if n in generators.values():
+#         return False
+#     return True
 
-n = int(input())
-print(fn_d(n))
-print(is_selfnumber(n))
+# n = int(input())
+# print(fn_d(n))
+# print(is_selfnumber(n))
+
+# 2. List의 합 구하기
+# def list_sum(lst):
+#     result = 0
+#     for i in lst:
+#         result += i
+#     return result
+
+# print(list_sum([1,2,3,4,5]))
+
+
+# 3. Dictionary로 이루어진 List의 합 구하기
+# def dict_list_sum(dic):
+#     age_list=[]
+#     result = 0
+#     for d in dic:
+#         age_list.append(d['age'])
+#     for age in age_list:
+#         result+=age
+#     return result
+
+# print(dict_list_sum([{'name': 'kim', 'age': 12},
+# {'name': 'lee', 'age': 4}]))
+
+
+# 4. 2차원 List의 전체 합 구하기
+# def all_list_sum(all_lst):
+#     result = 0
+#     for lst in all_lst:
+#         for i in lst:
+#             result+=i
+#     return result
+
+# print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
