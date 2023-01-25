@@ -474,52 +474,143 @@
 # print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
 
-def total_score(score):
-    total=0
-    for cost in score.values():
-        total+=cost
-    return total
-
-def calcul_score(score):
-    # 평균값 -> 전체 합/전체 개수
-    # 우리는 토탈이 존재
-    # 개수는...?
-    cnt=0
-    for i in score:
-        cnt+=1
-    return total_score(score)//cnt
-
-
-# def calcul_score(score):
+# def total_score(score):
 #     total=0
-#     cnt=0
 #     for cost in score.values():
 #         total+=cost
+#     return total
+
+# def calcul_score(score):
+#     # 평균값 -> 전체 합/전체 개수
+#     # 우리는 토탈이 존재
+#     # 개수는...?
+#     cnt=0
+#     for i in score:
 #         cnt+=1
-#     # print(total)
-#     return total//cnt
-
-def max_min(score):
-    sorted_list=sorted(score.values())
-    # print((sorted_list[0],sorted_list[-1]))
-    return (sorted_list[0],sorted_list[-1])
+#     return total_score(score)//cnt
 
 
+# # def calcul_score(score):
+# #     total=0
+# #     cnt=0
+# #     for cost in score.values():
+# #         total+=cost
+# #         cnt+=1
+# #     # print(total)
+# #     return total//cnt
 
-if __name__ == '__main__':
-    score = {
-        '최민호' : 210,
-        '금나와라이' : 350,
-        '자룡왕' : 650,
-        '허수아비' : 290,
-        '온유' : 180, 
-    }
-    print(total_score(score))
-    print(calcul_score(score)) 
-    print(max_min(score))
-    # print(score.items())
-    for item in score.items():
-        if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
-            print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
-            # break
+# def max_min(score):
+#     sorted_list=sorted(score.values())
+#     # print((sorted_list[0],sorted_list[-1]))
+#     return (sorted_list[0],sorted_list[-1])
+
+
+
+# if __name__ == '__main__':
+#     score = {
+#         '최민호' : 210,
+#         '금나와라이' : 350,
+#         '자룡왕' : 650,
+#         '허수아비' : 290,
+#         '온유' : 180, 
+#     }
+#     print(total_score(score))
+#     print(calcul_score(score)) 
+#     print(max_min(score))
+#     # print(score.items())
+#     for item in score.items():
+#         if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
+#             print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
+#             # break
+
+
+
+
+
+# A. 입력예시
+# print(de_identify('970103-1234567'))
+# print(de_identify('8611232345678'))
+
+# B. 출력예시
+# 970103*******
+# 861123******* 
+
+
+# def de_identify(S):
+#     S = str(S)
+#     idx = 0
+#     if '-' in S:
+#         S = S.replace('-','')
+#     S= S[:6]+'*'*7
+#     return S
+
+# print(de_identify('970103-1234567'))
+# print(de_identify('8611232345678'))
+
+
+# mask = [1,0,1,0,1,0]
+# arr = list(map(int,input().split()))
+
+# arr2 = []
+
+# for i in range(len(mask)):
+#     if mask[i]:
+#         arr2.append(arr[i])
+
+# idx = arr.index(min(arr2))
+
+# print(f'arr[{idx}]={arr[idx]}')
+
+
+# arr = [[3,1,9],[7,2,1],[1,0,8]]
+# mask = [list(map(int,input().split())) for _ in range(3)]
+
+# # 3~5 사이 숫자가 존재하는지 출력
+# flag=False
+# for i in range(3):
+#     for j in range(3):
+#         if mask[i][j]:
+#             if 3<=arr[i][j]<=5:
+#                 flag=True
+# if flag:
+#     print("발견")
+# else:
+#     print("미발견")
+
+
+# data = [3,5,4,2]
+# mask = list(map(int, input().split()))
+
+# result = 0
+
+# for i in range(4):
+#     if mask[i]:
+#         result += data[i]
+# print(result)
+
+# arr=[['A','B','C','D','E'],
+#      ['F','G','H','I','J'],
+#      ['K','L','M','N','O'],
+#      ['P','Q','R','S','T'],
+#      ['U','V','W','X','Y']]
+
+# c = input()
+# dx=dy=0
+# for i in range(5):
+#     for j in range(5):
+#          if arr[i][j]==c:
+#              dy,dx=i,j
+# print(f'{dy-2},{dx-2}')
+
+
+
+
+
+
+
+
+
+
+
+
 

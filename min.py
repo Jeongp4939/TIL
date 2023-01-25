@@ -585,27 +585,69 @@
 
 
 
-dy, dx = [-1, 1, 0, 0], [0, 0, -1, 1]
+# dy, dx = [-1, 1, 0, 0], [0, 0, -1, 1]
 
 
-def dfs(start):
-    visit = [[0]*16 for _ in range(16)]     # 16x16의 빈 배열 생성(경로 저장용)
-    stack = [start]                         # 시작점 좌표
-    while stack:                            # 스택이 빌 때까지 반복
-        y, x = stack.pop()
-        if visit[y][x] == 0:                # 가보지 않은 경로이면 지나갔으니 체크
-            visit[y][x] = 1
-            for i in range(4):              # 4방향 조사
-                ny = y + dy[i]
-                nx = x + dx[i]
-                if data[ny][nx] == '0':     # 안가본 위치라면 스택에 다음 좌표 삽입
-                    stack.append([ny, nx])
-                elif data[ny][nx] == '3':   # 도착점에 도착하면 1을 반환하고 끝
-                    return 1
-    return 0                                # 도착점에 도착 못하면 0을 반환
+# def dfs(start):
+#     visit = [[0]*16 for _ in range(16)]     # 16x16의 빈 배열 생성(경로 저장용)
+#     stack = [start]                         # 시작점 좌표
+#     while stack:                            # 스택이 빌 때까지 반복
+#         y, x = stack.pop()
+#         if visit[y][x] == 0:                # 가보지 않은 경로이면 지나갔으니 체크
+#             visit[y][x] = 1
+#             for i in range(4):              # 4방향 조사
+#                 ny = y + dy[i]
+#                 nx = x + dx[i]
+#                 if data[ny][nx] == '0':     # 안가본 위치라면 스택에 다음 좌표 삽입
+#                     stack.append([ny, nx])
+#                 elif data[ny][nx] == '3':   # 도착점에 도착하면 1을 반환하고 끝
+#                     return 1
+#     return 0                                # 도착점에 도착 못하면 0을 반환
 
 
-for t in range(1, 11):  # 10번의 테스트 케이스를 받은
-    input()             # 입력만 받고 안쓰는 인풋
-    data = [input() for i in range(16)]
-    print('#{} {}'.format(t, dfs([1, 1])))
+# for t in range(1, 11):  # 10번의 테스트 케이스를 받은
+#     input()             # 입력만 받고 안쓰는 인풋
+#     data = [input() for i in range(16)]
+#     print('#{} {}'.format(t, dfs([1, 1])))
+
+
+# def bbq():
+#     return bbq()
+
+
+# n = int(input())
+
+# def bunji(n):
+#     print(n,end=' ')
+#     if n > 0:
+#         bunji(n-1)
+#     if n!=0:
+#         print(n,end=' ')
+# bunji(n)
+
+# for i in range(len(arr)):
+#     print(arr[i], end=' ')
+# for i in range(len(arr)-2,-1,-1):
+#     print(arr[i],end=' ')
+
+# def jackson(arr,n=0):
+#     print(arr[n],end=' ')
+#     if n==len(arr)-1:       # n이 arr의 마지막 인덱스일 경우 종료
+#         return
+#     elif n<len(arr)-1:      # 다음 인덱스 호출을 위한 검사
+#         jackson(arr,n+1)
+#     print(arr[n],end = ' ')
+
+# arr = list(map(int, input().split()))
+# jackson(arr)
+
+cnt=0
+def abc(n):
+    global cnt
+    cnt+=1
+    if cnt <= 3:
+        abc(n+2)
+    print(n,end=' ')
+    
+abc(1)
+    
