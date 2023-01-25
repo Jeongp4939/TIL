@@ -619,9 +619,18 @@ print('끝')
 
 ---
 
+<details>
+<summary> 23.01.19 </summary>
+
 # **23.01.19**
 
+<details>
+<summary>함수 응용</summary>
+
 ## 함수 응용
+
+<details>
+<summary>내장 함수</summary>
 
 ### 내장 함수(Built-in Function)
 - 파이썬 인터프리터에 내장된 항상 사용할 수 있는 함수와 형
@@ -643,6 +652,10 @@ print('끝')
     - 간편 조건문 외 조건문이나 반복문을 가질 수 없음
     - 함수를 정의해서 사용하는 것보다 간결하게 사용 가능
     - def를 사용할 수 없는 곳에서도 사용가능
+</details>
+
+<details>
+<summary>재귀 함수</summary>
 
 ### 재귀 함수(recursive function)
 - 자기 자신을 호출하는 함수
@@ -662,6 +675,10 @@ print('끝')
 - 알고리즘 자체가 재귀적인 표현이 자연스러운 경우 재귀함수를 사용
 - 재귀 호출은 변수 사용을 줄여줄 수 있음
 - 재귀 호출은 입력 값이 커질 수록 연산 속도가 오래 걸림
+
+</details>
+<details>
+<summary>패킹/언패킹(Packing/Unpacking)</summary>
 
 ### 패킹/언패킹(Packing/Unpacking)
 - 모든 시퀀스형(리스트,튜플 등)은 패킹/언패킹 연산자 *를 사용하여 객체의 패킹 또는 언패킹이 가능
@@ -686,13 +703,17 @@ print('끝')
         - *가 이항연산자로 사용되는 경우
             - 이항 연산자: 두 개의 항을 대상으로 연산이 이루어지는 연산자
 
+</details>
+<details>
+<summary>가변인자</summary>
+
 ### 가변인자(*args)
 - 가변인자
     - 여러개의 Positional Argument를 하나의 필수 parameter로 받아서 사용
 - 가변인자는 사용
     - 몇 개의 Positional Argument를 받을지 모르는 함수를 정의할 때 유용
 
-### Asterisk(*)와 가변 인자
+#### Asterisk(*)와 가변 인자
 - *는 시퀀스 언패킹 연산자라고 불리며, 말 그대로 시퀀스를 풀어헤치는 연산자
     - 주로 튜플이나 리스트를 언패킹하는데 사용
     - *를 활용하여 가변 인자를 만들 수 있음
@@ -713,7 +734,7 @@ print('끝')
             for i in c:
                 print(f'c:{c}')
     ```
-### 가변 키워드 인자(**kwargs)
+#### 가변 키워드 인자(**kwargs)
 - 몇 개의 키워드 인자를 받을지 모르는 함수를 정의 할 떄 유용
 - **kwargs는 딕셔너리로 묶여 처리되며, parameter에 **를 붙여 표현
 ```python
@@ -723,6 +744,10 @@ print('끝')
 ```
 - 반드시 받아야하는 키워드 인자와, 추가적인 키워드 인자를 구분해서 사용 가능
 - 가변 인자(*args)와 가변 키워드 인자(**kwargs)를 함께 사용할 수 있음
+
+</details>
+<details>
+<summary>모듈과 패키지</summary>
 
 ## 모듈과 패키지
 - 다양한 기능을 하나의 파일로 만든 것(module)
@@ -791,7 +816,14 @@ print('끝')
 - bash에서 $ source <venv>/bin/activate를 통해 활성화 가능
 - 가상환경 비 활성화는 $ deactivate 명령어 사용
 
+</details>
+</details>
+</details>
 
+---
+
+<details>
+<summary> 23.01.25 </summary>
 
 # **23.01.25**
 
@@ -929,3 +961,6 @@ str.replace(old,new[,count])
     - 시퀀스 간의 concatenation(연결/인쇄)
 - 반복연산자(*)
     - 시퀀스를 반복
+
+
+</details>
