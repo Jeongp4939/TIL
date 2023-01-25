@@ -566,23 +566,46 @@
 
 # 컬러 찾기
 
-def isExist(n, arr):
-    for line in arr:
-        if n in line:
-            return 'Y'
-    return 'N'
+# def isExist(n, arr):
+#     for line in arr:
+#         if n in line:
+#             return 'Y'
+#     return 'N'
 
-map_n = [[3,55,42],[-5,-9,-10]]
-pix = []
-for _ in range(2):
-    pix.append(list(map(int,input().split())))
-for pix_line in pix:
-    for p in range(len(pix_line)):
-        pix_line[p] = isExist(pix_line[p],map_n)
-for line in pix:
-    print(*line)
-
-
+# map_n = [[3,55,42],[-5,-9,-10]]
+# pix = []
+# for _ in range(2):
+#     pix.append(list(map(int,input().split())))
+# for pix_line in pix:
+#     for p in range(len(pix_line)):
+#         pix_line[p] = isExist(pix_line[p],map_n)
+# for line in pix:
+#     print(*line)
 
 
 
+
+dy, dx = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+
+def dfs(start):
+    visit = [[0]*16 for _ in range(16)]     # 16x16의 빈 배열 생성(경로 저장용)
+    stack = [start]                         # 시작점 좌표
+    while stack:                            # 스택이 빌 때까지 반복
+        y, x = stack.pop()
+        if visit[y][x] == 0:                # 가보지 않은 경로이면 지나갔으니 체크
+            visit[y][x] = 1
+            for i in range(4):              # 4방향 조사
+                ny = y + dy[i]
+                nx = x + dx[i]
+                if data[ny][nx] == '0':     # 안가본 위치라면 스택에 다음 좌표 삽입
+                    stack.append([ny, nx])
+                elif data[ny][nx] == '3':   # 도착점에 도착하면 1을 반환하고 끝
+                    return 1
+    return 0                                # 도착점에 도착 못하면 0을 반환
+
+
+for t in range(1, 11):  # 10번의 테스트 케이스를 받은
+    input()             # 입력만 받고 안쓰는 인풋
+    data = [input() for i in range(16)]
+    print('#{} {}'.format(t, dfs([1, 1])))
