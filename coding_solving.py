@@ -489,22 +489,10 @@ def calcul_score(score):
         cnt+=1
     return total_score(score)//cnt
 
-
-# def calcul_score(score):
-#     total=0
-#     cnt=0
-#     for cost in score.values():
-#         total+=cost
-#         cnt+=1
-#     # print(total)
-#     return total//cnt
-
 def max_min(score):
     sorted_list=sorted(score.values())
     # print((sorted_list[0],sorted_list[-1]))
     return (sorted_list[0],sorted_list[-1])
-
-
 
 if __name__ == '__main__':
     score = {
@@ -514,6 +502,7 @@ if __name__ == '__main__':
         '허수아비' : 290,
         '온유' : 180, 
     }
+    
     print(total_score(score))
     print(calcul_score(score)) 
     print(max_min(score))
