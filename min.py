@@ -667,13 +667,173 @@
 # dic = sorted(dic.items(),key=lambda x:x[1],reverse=True)
 # print(dic[0][0])
 
-arr = [list(map(int,input().split())) for _ in range(3)]
-one_to_nine=[1,2,3,4,5,6,7,8,9]
+# arr = [list(map(int,input().split())) for _ in range(3)]
+# one_to_nine=[1,2,3,4,5,6,7,8,9]
 
-for line in arr:
-    for i in line:
-        if i in one_to_nine:
-            one_to_nine.remove(i)
-one_to_nine.sort()
-print(*one_to_nine)
+# for line in arr:
+#     for i in line:
+#         if i in one_to_nine:
+#             one_to_nine.remove(i)
+# one_to_nine.sort()
+# print(*one_to_nine)
     
+    
+    
+# map=[[1, 3, 3, 5, 1],
+#     [3, 6, 2, 4, 2],
+#     [1, 9, 2, 6, 5]]
+
+# n=int(input())
+
+# dic = {}
+# for line in map:
+#     for i in line:
+#         if i not in dic:
+#             dic[i]=1
+#         else:
+#             dic[i]+=1
+
+# check=[]
+
+# for key,value in dic.items():
+#     if value == n:
+#         check.append(key)
+# check.sort()
+# print(*check)
+    
+
+
+# cardlist=input()
+# cnt = {}
+# for i in cardlist:
+#     if i not in cnt:
+#         cnt[i]=1
+
+# print(f'{len(cnt.keys())}개')
+
+
+# S=input()
+# cnt = {}
+# for i in S:
+#     if i not in cnt:
+#         cnt[i]=1
+#     else:
+#         cnt[i]+=1
+# cnt = sorted(cnt.items(),key=lambda x:x[1],reverse=True)
+# print(f'{cnt[0][0]}')
+
+
+# town = [['C','D','A'],['B','M','Z'],['Q','P','O']]
+# black = input()
+# cnt=0
+
+# for line in town:
+#     for i in line:
+#         if i in black:
+#             cnt+=1
+            
+# print(f'{cnt}명')
+
+# map = [['A', 'B', 'C'],
+#     ['A', 'G', 'H'],
+#     ['H', 'I', 'J'],
+#     ['A', 'B', 'C'],
+#     ['K', 'A', 'B']]
+
+# s=''
+# for line in map:
+#     for i in line:
+#         s+=i
+# s=''.join(sorted(s))
+# print(s)
+
+# train = [3,7,6,4,2,9,1,7]
+# train_str=''
+# team = ''.join(input().split())
+# for i in train:
+#     train_str+=str(i)
+# idx = train_str.index(team)
+# print(f'{idx}번~{idx+len(team)-1}번 칸')
+
+
+
+# apt = [[15, 18, 17],
+#         [4, 6, 9],
+#         [10, 1, 3],
+#         [7, 8, 9],
+#         [15, 2, 6]]
+
+# people=list(map(int,input().split()))
+
+# for i in range(len(apt)):
+#     if apt[i]==people:
+#         print(f'{5-i}층')
+
+# arr = [[3,5,4],[1,1,2],[1,3,9]]
+# rlt=0
+# y,x = map(int,input().split())
+# dy=[-1,1,0,0]
+# dx=[0,0,1,-1]
+
+# for i in range(4):
+#     if 0<=y+dy[i]<3 and 0<=x+dx[i]<3:
+#         rlt += arr[y+dy[i]][x+dx[i]]
+# print(rlt)
+
+# dy=[-1,-1,1,1]
+# dx=[-1,1,-1,1]
+# arr = [[3,3,5,3,1],
+#        [2,2,4,2,6],
+#        [4,9,2,3,4],
+#        [1,1,1,1,1],
+#        [3,3,5,9,2]]
+
+# def sum_d(y,x):    
+#     sum_ = 0
+#     for i in range(4):
+#         if 0<=y+dy[i]<5 and 0<=x+dx[i]<5:
+#             sum_ += arr[y+dy[i]][x+dx[i]]
+#     return y,x,sum_
+
+
+# max_coord_y=max_coord_x=max_sum=0
+
+# for i in range(5):
+#     for j in range(5):
+#         if max_sum<sum_d(i,j)[2]:
+#             max_coord_y,max_coord_x,max_sum = sum_d(i,j)
+    
+# print(max_coord_y,max_coord_x)
+
+# ground=[['_' for _ in range(5)] for _ in range(4)]
+# dy=[1,-1,0,0,1,1,-1,-1]
+# dx=[0,0,-1,1,1,-1,1,-1]
+
+# def boom(y,x):    
+#     for i in range(8):
+#         if 0<=y+dy[i]<4 and 0<=x+dx[i]<5:
+#             ground[y+dy[i]][x+dx[i]]='#'
+
+# for i in range(2):
+#     y,x = map(int,input().split())
+#     boom(y,x)
+
+# for line in ground:
+#     print(*line)
+
+
+
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+
+for i in range(3):
+    print(a[i]+b[i])
+
+
+
+
+
+
+
+
+
