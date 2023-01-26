@@ -641,13 +641,39 @@
 # arr = list(map(int, input().split()))
 # jackson(arr)
 
-cnt=0
-def abc(n):
-    global cnt
-    cnt+=1
-    if cnt <= 3:
-        abc(n+2)
-    print(n,end=' ')
+# cnt=0
+# def abc(n):
+#     global cnt
+#     cnt+=1
+#     if cnt <= 3:
+#         abc(n+2)
+#     print(n,end=' ')
+
+# n=int(input())    
+# abc(n)
     
-abc(1)
+
+# map = [[65000, 35, 42, 70],
+#        [70, 35, 65000, 1300],
+#        [65000, 30000, 38, 42]]
+
+# dic = {}
+# for line in map:
+#     for i in line:
+#         if i not in dic:
+#             dic[i]=1
+#         else:
+#             dic[i]+=1
+# dic = sorted(dic.items(),key=lambda x:x[1],reverse=True)
+# print(dic[0][0])
+
+arr = [list(map(int,input().split())) for _ in range(3)]
+one_to_nine=[1,2,3,4,5,6,7,8,9]
+
+for line in arr:
+    for i in line:
+        if i in one_to_nine:
+            one_to_nine.remove(i)
+one_to_nine.sort()
+print(*one_to_nine)
     
