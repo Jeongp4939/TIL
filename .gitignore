@@ -1,4 +1,8 @@
 login.log
 *.pdf
 
+<<<<<<< HEAD
 Day0*
+=======
+.venv
+>>>>>>> 94ead31a02492519a3ddb48ee8329845cc2e66fb
