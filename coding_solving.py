@@ -474,45 +474,45 @@
 # print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
 
-<<<<<<< HEAD
-def total_score(score):
-    total=0
-    for cost in score.values():
-        total+=cost
-    return total
+# def total_score(score):
+#     total=0
+#     for cost in score.values():
+#         total+=cost
+#     return total
 
-def calcul_score(score):
-    # 평균값 -> 전체 합/전체 개수
-    # 우리는 토탈이 존재
-    # 개수는...?
-    cnt=0
-    for i in score:
-        cnt+=1
-    return total_score(score)//cnt
+# def calcul_score(score):
+#     # 평균값 -> 전체 합/전체 개수
+#     # 우리는 토탈이 존재
+#     # 개수는...?
+#     cnt=0
+#     for i in score:
+#         cnt+=1
+#     return total_score(score)//cnt
 
-def max_min(score):
-    sorted_list=sorted(score.values())
-    # print((sorted_list[0],sorted_list[-1]))
-    return (sorted_list[0],sorted_list[-1])
+# def max_min(score):
+#     sorted_list=sorted(score.values())
+#     # print((sorted_list[0],sorted_list[-1]))
+#     return (sorted_list[0],sorted_list[-1])
 
-if __name__ == '__main__':
-    score = {
-        '최민호' : 210,
-        '금나와라이' : 350,
-        '자룡왕' : 650,
-        '허수아비' : 290,
-        '온유' : 180, 
-    }
+# if __name__ == '__main__':
+#     score = {
+#         '최민호' : 210,
+#         '금나와라이' : 350,
+#         '자룡왕' : 650,
+#         '허수아비' : 290,
+#         '온유' : 180, 
+#     }
     
-    print(total_score(score))
-    print(calcul_score(score)) 
-    print(max_min(score))
-    # print(score.items())
-    for item in score.items():
-        if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
-            print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
-            # break
-=======
+#     print(total_score(score))
+#     print(calcul_score(score)) 
+#     print(max_min(score))
+#     # print(score.items())
+#     for item in score.items():
+#         if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
+#             print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
+#             # break
+
+
 # def total_score(score):
 #     total=0
 #     for cost in score.values():
@@ -642,6 +642,120 @@ if __name__ == '__main__':
 # print(f'{dy-2},{dx-2}')
 
 
+# grain_lst = [('고구마',3000), ('감자',2000), ('옥수수',4500),('토란',1300)]
+
+# grain_lst = sorted(grain_lst, key=lambda x:x[1], reverse=True)
+# print(grain_lst[0][0])
+
+# def count_vowels(s):
+#     vowels='aeiou'
+#     cnt = 0
+#     for i in vowels:
+#         if i in s:
+#             cnt+=s.count(i)
+#     print(cnt)
+
+# count_vowels('apple') #=> 2
+# count_vowels('banana') #=> 3
+
+
+# from collections import Counter
+
+# entry_record = ['이싸피', '박장고', '조실습', '이싸피', '조실습', '오디비', '임온실', '조실습', '조실습',
+#                 '이싸피', '안도둑', '임온실', '최이썬', '오디비', '안도둑', '염자바', '박장고', '조실습',
+#                 '최이썬', '조실습', '염자바', '박장고', '임온실', '임온실', '이싸피', '임온실', '오디비',
+#                 '조실습', '염자바', '임온실', '박장고', '최이썬', '안도둑', '염자바', '임온실', '박장고',
+#                 '이싸피', '안도둑', '임온실', '오디비', '최이썬', '안도둑', '이싸피', '오디비', '안도둑',
+#                 '이싸피', '박장고', '박장고', '안도둑', '안도둑', '안도둑', '염자바', '최이썬', '오디비',
+#                 '오디비', '최이썬', '이싸피', '임온실', '안도둑']
+
+# exit_record = ['최이썬', '조실습', '이싸피', '안도둑', '임온실', '안도둑', '이싸피', '오디비', '염자바',
+#                '박장고', '최이썬', '이싸피', '염자바', '염자바', '박장고', '임온실', '이싸피', '박장고',
+#                '안도둑', '염자바', '이싸피', '조실습', '조실습', '임온실', '박장고', '이싸피', '조실습',
+#                '박장고', '오디비', '안도둑', '조실습', '임온실', '안도둑', '안도둑', '임온실', '조실습',
+#                '최이썬', '안도둑', '임온실', '염자바', '이싸피', '임온실', '안도둑', '오디비', '안도둑',
+#                '오디비', '임온실', '염자바', '임온실', '박장고', '조실습', '이싸피', '최이썬', '최이썬',
+#                '오디비', '오디비', '염자바', '오디비', '안도둑', '박장고']
+
+# # def make_dic(lst,dic):        # counter 없이 구현
+# #     for i in lst:
+# #         if i not in dic:
+# #             dic[i]=1
+# #         else:
+# #             dic[i]+=1
+# #     return dic
+# # entry_list = {}
+# # exit_list = {}
+# # entry_list = dict(sorted(make_dic(entry_record,entry_list).items(),key=lambda x:x[1],reverse=True))
+# # exit_list = dict(sorted(make_dic(exit_record,exit_list).items(),key=lambda x:x[1],reverse=True))
+
+# entry_list = dict(sorted(dict(Counter(entry_record)).items(), key=lambda x:x[1],reverse=True))
+# exit_list = dict(sorted(dict(Counter(exit_record)).items(), key=lambda x:x[1],reverse=True))
+
+
+# print(entry_list,exit_list)
+# print('입장 기록이 많은 Top3')
+# for i in range(3):
+#     print(f'{list(entry_list.keys())[i]} {list(entry_list.values())[i]}회')
+
+
+# print('\n출입 기록이 수상한 사람')
+
+# for i in range(len(entry_list)):
+#     if list(entry_list.values())[i] > exit_list[list(entry_list.keys())[i]]:
+#         print(f'{list(entry_list.keys())[i]}은 입장 기록이 {list(entry_list.values())[i]-exit_list[list(entry_list.keys())[i]]}회 더 많이 수상합니다.')
+#     elif list(entry_list.values())[i] < exit_list[list(entry_list.keys())[i]]:
+#         print(f'{list(entry_list.keys())[i]}은 퇴장 기록이 {exit_list[list(entry_list.keys())[i]]-list(entry_list.values())[i]}회 더 많아 수상합니다.')
+
+
+# def sum_of_digit(n):
+#     n=list(map(int,str(n)))
+#     print(sum(n))
+
+# def sum_of_digit_with_for(n):
+#     n=str(n)
+#     rlt=0
+#     for i in n:
+#         rlt+=int(i)
+#     print(rlt)
+
+    
+# sum_of_digit(3904) # 16
+# sum_of_digit_with_for(3904) # 16
+
+
+
+
+# 입력 예시
+# # mass percent.py 실행 시
+# 1.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 1% 400g
+# 2.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: 8% 300g
+# Done
+
+# 출력 예시
+# 4.0% 700.0g
+
+
+# salty_water=[]
+# for i in range(5):
+#     ipt = input(f'{i+1}.소금물의 농도(%)와 소금물의 양(g)을 입력하십시오: ')
+#     ipt=ipt.replace('%','')
+#     ipt=ipt.replace('g','')
+#     if ipt=='Done':
+#         break
+#     else:
+#         salty_water.append(tuple(map(int,ipt.split())))
+# water = 0
+# salt = 0
+# for i in range(len(salty_water)):
+#     water += salty_water[i][1]
+#     salt += salty_water[i][0]*salty_water[i][1]/100
+# print(f'{salt/water*100:.2f}% {water:.1f}g')
+
+
+A=list(input().split(','))
+
+print(A)
 
 
 
@@ -652,5 +766,4 @@ if __name__ == '__main__':
 
 
 
->>>>>>> 165ed3ceaa1f8e01f378653a905eb561b2c1035c
 
