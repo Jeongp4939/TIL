@@ -823,11 +823,105 @@
 
 
 
-a=list(map(int,input().split()))
-b=list(map(int,input().split()))
+# a=list(map(int,input().split()))
+# b=list(map(int,input().split()))
 
-for i in range(3):
-    print(a[i]+b[i])
+# for i in range(3):
+#     print(a[i]+b[i])
+
+
+# arr = [['G','K','G']]
+# arr.append(input().split())
+# arr = arr[0]+arr[1]
+
+# for i in arr:
+#     if arr.count(i)>=3:
+#         print('있음')
+#         break
+# else:
+#     print('없음')
+
+
+# lst=list(input().split())
+# for i in lst:
+#     if lst.count(i)>=2:
+#         print('도플갱어 발견')
+#         break
+# else:
+#     print('미발견')
+
+# S = input()
+# max_cnt=0
+# max_chr=''
+# for i in S:
+#     if S.count(i) > max_cnt:
+#         max_cnt=S.count(i)
+#         max_chr=i
+# print(max_chr)
+
+
+# up = list(map(int,input().split()))
+# down = list(map(int,input().split()))
+# cnt=0
+# for i in range(len(up)):
+#     if up[i] & down[i]:
+#         cnt+=1
+# print(f'{cnt}개')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

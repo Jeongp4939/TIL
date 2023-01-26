@@ -755,8 +755,6 @@
 
 A=list(input().split(','))
 
-print(A)
-
 
 
 
