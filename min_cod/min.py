@@ -869,24 +869,81 @@
 # print(f'{cnt}개')
 
 
+# s = 'ATKPTCABC'
+
+# a,b = input().split()
+
+# a_idx=s.index(a)
+# b_idx=len(s)-list(reversed(s)).index(b)-1
+
+# print(max(a_idx,b_idx)-min(a_idx,b_idx))
+
+# win = [[3,5,1],[4,2,6]]
+# people = list(map(int,input().split()))
+
+# for i in people:
+#     for winner in win:
+#         if i in winner:
+#             print(f'{i}번 합격')
+#             break
+#     else:
+#         print(f'{i}번 불합격')
 
 
+# vect = 'MINCODING'
+# input()
+# c_lst = list(input().split())
+
+# for c in c_lst:
+#     if c in vect:
+#         print('O',end='')
+#     else:
+#         print('X',end='')
+
+# s_lst=[]
+# for _ in range(3):
+#     s_lst.append(input())
+# flag=False
+
+# for s in s_lst:
+#     for c in s:
+#         if s.count(c)>=2:
+#             flag=True
+#             break
+#     if flag:
+#         print('No')
+#         break
+# else:
+#     print('Perfect')
 
 
+# s = input()
+# new_s=''
 
+# for c in s:
+#     if c not in new_s:
+#         new_s+=c
+# print(''.join(sorted(new_s)))
 
+# s=input()
+# s_dic={}
+# for c in s:
+#     if c not in s_dic:
+#         s_dic[c]=1
+#     else:
+#         s_dic[c]+=1
 
+# s_dic=sorted(s_dic.items(), key=lambda x:x[0])
 
+# for s_ in s_dic:
+#     print(f'{s_[0]}:{s_[1]}')
 
+s = input()
 
-
-
-
-
-
-
-
-
+if 'GHOST' in s:
+    print('존재')
+else:
+    print('존재하지 않음')
 
 
 
