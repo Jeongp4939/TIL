@@ -938,12 +938,120 @@
 # for s_ in s_dic:
 #     print(f'{s_[0]}:{s_[1]}')
 
-s = input()
+# s = input()
 
-if 'GHOST' in s:
-    print('존재')
-else:
-    print('존재하지 않음')
+# if 'GHOST' in s:
+#     print('존재')
+# else:
+#     print('존재하지 않음')
+
+# bob = [input()for _ in range(2)]
+# tom = [input()for _ in range(2)]
+
+# for i in range(2):
+#     print(f'bob.burger{i+1}={len(bob[i])}')
+# for i in range(2):
+#     print(f'tom.burger{i+1}={len(tom[i])}')
+
+# train=[[15, "summer"],
+#     [33, "cloe"],
+#     [24, "summer"],
+#     [28, "niki"],
+#     [32, "jenny"],
+#     [20, "summer"],
+#     [40, "coco"]]
+
+# person = [input() for _ in range(2)]
+
+# for i in range(len(train)):
+#     if train[i][1]==person[0] and train[i][0]==int(person[1]):
+#         print(i)
+        
+
+# vect = [[0]*3 for _ in range(4)]
+
+# ipt = [list(map(int,input().split())) for _ in range(4)]
+# for y,x in ipt:
+#     vect[y][x]=5
+# for line in vect:
+#     print(*line)
+
+# image = [list(map(int,input().split())) for _ in range(4)]
+# coord = (0,0)
+# max_sum=0
+# for i in range(3):
+#     for j in range(2):
+#         if max_sum < image[i][j]+image[i][j+1]+image[i][j+2]+image[i+1][j]+image[i+1][j+1]+image[i+1][j+2]:
+#             max_sum = image[i][j]+image[i][j+1]+image[i][j+2]+image[i+1][j]+image[i+1][j+1]+image[i+1][j+2]
+#             coord=(i,j)
+# print(f'({coord[0]},{coord[1]})')
+
+# def BBQ(lst):
+#     return max(lst),min(lst)
+
+# lst = list(map(int,input().split()))
+# a,b=BBQ(lst)
+# print(f'a={a}')
+# print(f'b={b}')
+
+# ground = [list(map(int,input().split())) for _ in range(5)]
+# dy,dx=[0,0,1,-1,1,1,-1,-1],[1,-1,0,0,1,-1,1,-1]
+
+# def is_stable(ground):
+#     for i in range(5):
+#         for j in range(4):
+#             if ground[i][j]==1:
+#                 for d in range(8):
+#                     ny = i+dy[d]
+#                     nx = j+dx[d]
+#                     if ny<0 or nx<0 or ny>=5 or nx>=4:
+#                         continue
+#                     if ground[ny][nx]==1:
+#                         return '불안정한 상태'
+#     return '안정된 상태'
+
+# print(is_stable(ground))
+
+
+arr = [[i for i in range(4*j+1,4*j+4+1)] for j in range(4)]
+
+print(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
