@@ -474,6 +474,7 @@
 # print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
 
+<<<<<<< Updated upstream
 # def total_score(score):
 #     total=0
 #     for cost in score.values():
@@ -764,4 +765,43 @@ A=list(input().split(','))
 
 
 
+=======
+def total_score(score):
+    total=0
+    for cost in score.values():
+        total+=cost
+    return total
+
+def calcul_score(score):
+    # 평균값 -> 전체 합/전체 개수
+    # 우리는 토탈이 존재
+    # 개수는...?
+    cnt=0
+    for i in score:
+        cnt+=1
+    return total_score(score)//cnt
+
+def max_min(score):
+    sorted_list=sorted(score.values())
+    # print((sorted_list[0],sorted_list[-1]))
+    return (sorted_list[0],sorted_list[-1])
+
+if __name__ == '__main__':
+    score = {
+        '최민호' : 210,
+        '금나와라이' : 350,
+        '자룡왕' : 650,
+        '허수아비' : 290,
+        '온유' : 180, 
+    }
+    
+    print(total_score(score))
+    print(calcul_score(score)) 
+    print(max_min(score))
+    # print(score.items())
+    for item in score.items():
+        if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
+            print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
+            # break
+>>>>>>> Stashed changes
 

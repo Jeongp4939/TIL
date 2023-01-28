@@ -648,6 +648,7 @@
 #     if cnt <= 3:
 #         abc(n+2)
 #     print(n,end=' ')
+<<<<<<< Updated upstream:min_cod/min.py
 
 # n=int(input())    
 # abc(n)
@@ -1095,4 +1096,9 @@ print(arr)
 
 
 
+=======
+    
+# abc(1)
+    
+>>>>>>> Stashed changes:min.py
 
