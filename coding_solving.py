@@ -1,3 +1,4 @@
+""" 
 # orders = '아이스아메리카노,카라멜마키야또,에스프레소,아메리카노,아메리카노,아이스라떼,핫초코,아이스아메리카노,아메리카노,아이스카라멜마키야또,아이스라떼,라떼마키야또,카푸치노,라떼마키야또'
 # orders = list(orders.split(','))
 
@@ -473,6 +474,8 @@
 
 # print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
+ """
+
 """ 
 def total_score(score):
     total=0
@@ -579,8 +582,6 @@ while (hero.hp > 0) and (dragon.hp > 0):
 
  """
 
-
-
 """ 
 class Calculator:
     def __init__(self):
@@ -653,6 +654,80 @@ print(ch.pick(4))
 
 print(ch.match_pair())
 """
+
+""" 
+# 데일리과제 7-2 객체지향 프로그래밍
+
+class Doggy:
+    num_of_dogs=0
+    birth_of_dogs=0
+    def __init__(self,name,breed):
+        self.name=name
+        self.breed=breed
+        Doggy.num_of_dogs+=1
+        Doggy.birth_of_dogs+=1
+        
+    @classmethod
+    def death(cls):
+        cls.num_of_dogs-=1
+        del cls
+        
+    @staticmethod
+    def bark():
+        print('bark!')
+
+    @staticmethod
+    def status():
+        print(f'birth_of_dogs:{Doggy.birth_of_dogs}\nnum_of_dogs:{Doggy.num_of_dogs}')
+        
+dog1 = Doggy('didi','dd')
+Doggy.status()
+print()
+dog2 = Doggy('cici','cc')
+dog3 = Doggy('bibi','bb')
+Doggy.status()
+print()
+dog3.death()
+Doggy.status()
+print()
+dog3 = Doggy('bbibbi','bbi')
+Doggy.status()
+"""
+
+""" 
+# 데일리 과제 7-4
+# 입력된 수가 짝수 2로 나눔
+# 입력된 수가 홀수 3을 곱하고 + 1
+# 숫자가 1이 될 때까지 반복
+
+def collatz(n):
+    cnt = 0
+    while n!=1:
+        if n%2:
+            n=n*3+1
+            cnt+=1
+        else:
+            n=n//2
+            cnt+=1
+        if cnt > 500:
+            return print(-1)
+    return print(cnt)
+
+collatz(6) #=> 8
+collatz(16) #=> 4
+collatz(27) #=> 111
+collatz(626331) #=> -1
+"""
+
+
+
+
+
+
+
+
+
+
 
 
 

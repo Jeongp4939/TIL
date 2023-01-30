@@ -1,3 +1,4 @@
+""" 
 # lst=[['D','A','T','A','W'],['B','B','Q','K']]
 
 # n = int(input())
@@ -1011,8 +1012,9 @@
 #     return '안정된 상태'
 
 # print(is_stable(ground))
+ """
 
-
+""" 
 arr = [[i for i in range(4*j+1,4*j+4+1)] for j in range(4)]
 new_arr = [[0]*4 for _ in range(4)]
 
@@ -1030,16 +1032,88 @@ for line in new_arr:
     print(*line)
                 
 
+"""
+""" 
+# 가로 세로 색칠하기
+# 4x4 배열
+
+arr = [[0]*4 for _ in range(4)]
+
+for _ in range(3):
+    a,b = map(str,input().split())
+    if a == 'G':
+        for i in range(4):
+            arr[int(b)][i]=1
+    elif a == 'S':
+        for i in range(4):
+            arr[i][int(b)]=1
+
+for line in arr:
+    print(*line)
+
+"""
+""" 
+# 모양 넣기
+image = [input()for _ in range(3)]
+alpha=[]
+for i in range(3):
+    for j in range(3):
+        if image[i][j] not in alpha:
+            alpha.append(image[i][j])
+print(''.join(sorted(alpha)))
+"""
+""" 
+# 비밀 위치 찾기
+arr=[['A','B','G','K'],['T','T','A','B'],['A','C','C','D']]
+pattern = [input() for _ in range(2)]
+
+cnt=0
+for i in range(2):
+    for j in range(3):
+        if arr[i][j]+arr[i][j+1]==pattern[0] and arr[i+1][j]+arr[i+1][j+1]==pattern[1]:
+            cnt+=1
+
+if cnt:
+    print(f'발견({cnt}개)')
+else:
+    print('미발견')
+"""
+""" 
+# 마스킹하고 난 뒤
+
+arr = [[3,5,1],[3,8,1],[1,1,5]]
+bitarray = [list(map(int,input().split())) for _ in range(2)]
 
 
+max_sum = 0
+y=x=0
+
+for i in range(2):
+    for j in range(2):
+        sum = 0
+        for bi in range(2):
+            for bj in range(2):
+                if bitarray[bi][bj]:
+                    sum+=arr[i+bi][j+bj]
+        if sum>max_sum:
+            max_sum=sum
+            y,x = i,j
+print(f'({y},{x})')
+"""
 
 
+# 다섯 글자 역순 출력 재귀함수 이용
+
+def reverse_str(s):
+    pass
+    
 
 
+s='asdfg'
 
+print(reverse_str(s))
 
-
-
+    
 
 
 
