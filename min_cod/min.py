@@ -648,7 +648,6 @@
 #     if cnt <= 3:
 #         abc(n+2)
 #     print(n,end=' ')
-<<<<<<< Updated upstream:min_cod/min.py
 
 # n=int(input())    
 # abc(n)
@@ -1015,9 +1014,21 @@
 
 
 arr = [[i for i in range(4*j+1,4*j+4+1)] for j in range(4)]
+new_arr = [[0]*4 for _ in range(4)]
 
-print(arr)
+pw = list(map(int,input().split()))
+coord=[]
+for p in pw:
+    for i in range(4):
+        for j in range(4):
+            if arr[i][j]==p:
+                coord.append((i,j))
+for i in range(4):
+    new_arr[coord[i][0]][coord[i][1]]=i+1
 
+for line in new_arr:
+    print(*line)
+                
 
 
 
@@ -1095,10 +1106,4 @@ print(arr)
 
 
 
-
-=======
-    
-# abc(1)
-    
->>>>>>> Stashed changes:min.py
 
