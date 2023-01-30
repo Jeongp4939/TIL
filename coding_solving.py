@@ -473,7 +473,7 @@
 
 # print(all_list_sum([[1], [2, 3], [4, 5, 6], [7, 8, 9, 10]]))
 
-
+""" 
 def total_score(score):
     total=0
     for cost in score.values():
@@ -510,5 +510,149 @@ if __name__ == '__main__':
     for item in score.items():
         if item[1]==max_min(score)[0]:  # value 위치가 1번 인덱스이므로 최솟값과 value가 일치 하는 경우
             print(item[0])              # 해당 value의 key값인 0번 인덱스를 출력
-            # break
+            # break 
+# """
+
+""" 
+class Nationality:
+    def __init__(self, country):
+        self.country = country
+    
+    def __str__(self) -> str:
+        return f'나의 국적은 {self.country}'
+
+korea_nationality = Nationality("대한민국")
+print(korea_nationality)
+ """
+
+""" 
+class Creature:
+	def __init__(self):
+		self.hp = 0
+		self.attack = 0
+		self.deffence = 0
+
+	def attack_target(self, target):
+		print(f"{self} attack {target}")
+		demage = self.attack - target.deffence
+		target.hp -= demage if self.attack > target.deffence else 1	# 방어력보다 공격력이 낮을 시 대미지 1
+		if target.hp <= 0:	# hp==0일 경우 추가
+			print(f"Oh, {target} is down! I repeat. {target} is down!")
+		else:
+			print(f"{target}'s hp: {target.hp}")
+
+
+class Hero(Creature):
+    def __init__(self):
+        super().__init__()
+        self.hp = 150
+        self.attack = 10
+        self.deffence = 10
+
+    def __str__(self):
+        return "Hero"
+
+    def set_magic_power(self):
+        # set the Hero Status(hp, attack, deffence)
+        self.attack*=60
+        self.deffence*=4
+		# set_magic_power시 attack, deffence 곱연산으로 증가
+
+class Dragon(Creature):
+	def __init__(self):
+		super().__init__()
+		self.hp = 1000
+		self.attack = 50
+		self.deffence = 100
+
+	def __str__(self):
+		return "Dragon"
+
+
+hero = Hero()
+hero.set_magic_power()
+dragon = Dragon()
+while (hero.hp > 0) and (dragon.hp > 0):
+	hero.attack_target(dragon)
+	if dragon.hp > 0:
+		dragon.attack_target(hero)
+
+ """
+
+
+
+""" 
+class Calculator:
+    def __init__(self):
+        pass
+    
+    def add(self,one,another):
+        print(one+another)
+    
+    def substract(self,one, another):
+        print(one-another)
+    
+    def multiply(self,one,another):
+        print(one*another)
+    
+    def divide(self,one,another):
+        try: print(one/another)
+        except: print('0으로 나눌 수 없습니다.')
+        
+cal1 = Calculator()
+cal1.add(1,2)
+cal1.substract(3,2)
+cal1.multiply(2,6)
+cal1.divide(2,0)
+"""
+
+""" 
+from math import ceil
+def fee(time,distance):
+    time_fee = ceil(time/10*1200)
+    distance_fee = distance*170 if distance<=100 else 100*170 + (distance-100)*85
+    insurance_fee = ceil(time/30)*525
+    return time_fee+distance_fee+insurance_fee
+
+print(fee(600,50))
+print(fee(600,110))
+"""
+""" 
+import random
+class ClassHelper:
+    def __init__(self,student_list):
+        self.student_list=student_list
+        
+    def pick(self,n):
+        return random.sample(self.student_list,n)
+    
+    def match_pair(self):
+        pair_list=[]
+        for i in range(len(self.student_list)//2):
+            temp = []
+            if len(self.student_list)%2:
+                for i in range(3):
+                    random.shuffle(self.student_list)
+                    temp.append(self.student_list.pop())
+                pair_list.append(temp)
+            else:
+                for i in range(2):
+                    random.shuffle(self.student_list)
+                    temp.append(self.student_list.pop())
+                pair_list.append(temp)
+        self.student_list+=pair_list
+        return self.student_list
+            
+ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
+
+print(ch.pick(1))
+print(ch.pick(1))
+print(ch.pick(2))
+print(ch.pick(3))
+print(ch.pick(4))
+
+print(ch.match_pair())
+"""
+
+
 
