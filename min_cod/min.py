@@ -1101,26 +1101,29 @@ for i in range(2):
 print(f'({y},{x})')
 """
 
-
+""" 
 # 다섯 글자 역순 출력 재귀함수 이용
         
 def reverse_str(s):
-    cnt=len(s)
-    st=''
-    
-    
-    
-    return
+    if len(s)>0:
+        return s[-1] + reverse_str(s[:-1])
+    return ''
 
-
-
-s='asdfg'
-
+s=input()
+print(s)
 print(reverse_str(s))
+"""
 
-    
+# a, b 재귀 호출
 
+def recursive_call(a,b):
+    if a<b:
+        print(a, end=' ')
+        recursive_call(a+1,b)
+    return print(a, end=' ')
 
+a,b = map(int,input().split())
+recursive_call(a,b)
 
 
 

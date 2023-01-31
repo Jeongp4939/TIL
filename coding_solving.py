@@ -718,4 +718,143 @@ collatz(16) #=> 4
 collatz(27) #=> 111
 collatz(626331) #=> -1
 """
+""" 
+participants =  [3, 7, 100, 21, 13, 6, 5, 7, 5, 6, 3, 13, 21]
+
+def p_remain(lst):
+    dic = {}
+    for i in lst:
+        if i not in dic:
+            dic[i]=1
+        else:
+            dic[i]+=1
+    for d in dic.keys():
+        if dic[d]==1:
+            return print(f'깍두기의 번호 : {lst.index(d)+1}번 참가자')
+
+p_remain(participants)
+"""
+
+
+""" 
+# 8-2 OOP
+
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    
+    @classmethod
+    def get_age(cls,name,year):
+        return cls(name,2024-year) # 2023년 - 출생년도 +1
+    
+    def check_age(self):
+        return self.age>=19
+    
+    
+
+#Driver's code
+person1 = Person('Mark', 20)
+person2 = Person.get_age('Rohan', 1992)
+
+print(person1.name, person1.age) 
+print(person2.name, person2.age)
+print(person1.check_age())
+print(person2.check_age()) 
+ """
+
+""" 
+# 8-3 OOP 상속과 오버라이딩
+
+
+class PublicTransport:
+    total_passenger = 0
+    def __init__(self, name, fare):
+        self.name = name
+        self.fare = fare
+        self._passenger = 0
+    
+    def get_in(self,passenger):
+        self._passenger+=passenger
+        self.total_passenger+=passenger
+    
+    def get_off(self,passenger):
+        if self._passenger-passenger>=0:
+            self._passenger-=passenger
+        else:
+            return print('더이상 내릴 사람이 없습니다..')
+        
+    def num_of_passenger(self):
+        return print(f'{self._passenger}명')
+    
+    def profit(self):
+        return self.total_passenger*self.fare
+    
+class Bus(PublicTransport):
+    def __init__(self, name, fare):
+        super().__init__(name, fare)
+        self.max_passenger = 20
+    
+    def get_in(self, passenger):
+        if self._passenger+passenger<=20:
+            self._passenger+=passenger
+            self.total_passenger+=passenger
+        else:
+            return print('더이상 탑승 할 수 없습니다.')
+    
+
+
+bus = Bus('Bus',1400)
+bus.get_in(18)
+bus.num_of_passenger()
+bus.get_off(1)
+bus.num_of_passenger()
+
+bus.get_in(4)
+bus.num_of_passenger()
+bus.get_off(18)
+
+print(bus.profit())
+"""
+
+def hanoi(N,start,to,via):   # 큰 수가 큰 원반, 큰원반은 작은 원반 위에 못올라감
+    if N==1:
+        print(f'{start} 기둥의 {N}번 원반을 {to} 기둥으로 옯깁니다.')
+    else:
+        hanoi(N-1,start,via,to)
+        print(f'{start} 기둥의 {N}번 원반을 {to} 기둥으로 옯깁니다.')
+        hanoi(N-1,via,to,start)
+
+N= int(input())
+hanoi(N,'A','C','B')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
