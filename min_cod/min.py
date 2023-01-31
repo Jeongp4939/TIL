@@ -1103,10 +1103,15 @@ print(f'({y},{x})')
 
 
 # 다섯 글자 역순 출력 재귀함수 이용
-
+        
 def reverse_str(s):
-    pass
+    cnt=len(s)
+    st=''
     
+    
+    
+    return
+
 
 
 s='asdfg'

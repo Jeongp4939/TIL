@@ -692,7 +692,7 @@ Doggy.status()
 print()
 dog3 = Doggy('bbibbi','bbi')
 Doggy.status()
-"""
+ """
 
 """ 
 # 데일리 과제 7-4
