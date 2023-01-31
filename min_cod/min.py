@@ -400,9 +400,9 @@
 
 # arr = [5,9,4,6,1,5,8,9]
 
-# idx,target = map(int,input().split())
-# tg_idx = arr.index(target)
-# print(f'{tg_idx-idx}') if tg_idx>=idx else print(f'{len(arr)-idx+tg_idx}')
+# n,target = map(int,input().split())
+# tg_n = arr.index(target)
+# print(f'{tg_n-n}') if tg_n>=n else print(f'{len(arr)-n+tg_n}')
 
 
 # arr=[[3,5,9],[4,2,1],[1,1,5]]
@@ -753,8 +753,8 @@
 # team = ''.join(input().split())
 # for i in train:
 #     train_str+=str(i)
-# idx = train_str.index(team)
-# print(f'{idx}번~{idx+len(team)-1}번 칸')
+# n = train_str.index(team)
+# print(f'{n}번~{n+len(team)-1}번 칸')
 
 
 
@@ -874,10 +874,10 @@
 
 # a,b = input().split()
 
-# a_idx=s.index(a)
-# b_idx=len(s)-list(reversed(s)).index(b)-1
+# a_n=s.index(a)
+# b_n=len(s)-list(reversed(s)).index(b)-1
 
-# print(max(a_idx,b_idx)-min(a_idx,b_idx))
+# print(max(a_n,b_n)-min(a_n,b_n))
 
 # win = [[3,5,1],[4,2,6]]
 # people = list(map(int,input().split()))
@@ -1113,7 +1113,7 @@ s=input()
 print(s)
 print(reverse_str(s))
 """
-
+""" 
 # a, b 재귀 호출
 
 def recursive_call(a,b):
@@ -1124,6 +1124,34 @@ def recursive_call(a,b):
 
 a,b = map(int,input().split())
 recursive_call(a,b)
+"""
+
+""" 
+# 재귀 부메랑
+lst = [3,7,4,1,9,4,6,2]
+def bumerang(n):
+    print(lst[n],end=' ')
+    if n>=1:
+        bumerang(n-1)
+        return print(lst[n],end=' ')
+    
+
+idx = int(input())
+bumerang(idx)
+ """
+
+"""
+# 없어질 때까지 나눠먹기
+
+n = int(input())
+
+def division_by2(n):
+    if n>=2:
+        division_by2(n//2)  # 다음 연산이 0이 될 때까지 //2
+    print(n, end=' ')       # 마지막 연산이 끝난 함수부터 값을 출력
+
+division_by2(n)
+"""
 
 
 
