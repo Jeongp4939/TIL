@@ -1154,15 +1154,88 @@ division_by2(n)
 """
 
 
+""" 
+# 앞으로 돌진하는 계단
 
+s = input()
 
+for i in range(len(s)):
+    for j in range(len(s)-i-1,len(s)):
+        print(s[j],end='')
+    print()
+"""
 
+""" 
+# 절반 나누기
 
+s = input()
+s_l = s[:len(s)//2]
+s_r = s[len(s)//2:]
+if s_l == s_r:
+    print('동일한문장')
+else:
+    print('다른문장')
+"""
+""" 
+#겹치지 않도록
+A = [list(map(int,input().split())) for _ in range(4)]
+input()
+B = [list(map(int,input().split())) for _ in range(4)]
 
+flag = False
+for i in range(4):
+    for j in range(4):
+        flag = A[i][j] and B[i][j]
+        if flag:
+                break
+    if flag:
+            break
 
+if flag:
+    print('걸리다')
+else:
+    print('걸리지않는다')
+"""
 
+""" 
+# 일곱 계단 만들기
+c = input()
 
+for i in range(-3,4,1):
+    if ord(c)+i<65:
+        print(chr(91-(-(ord(c)+i)%65)),end='')
+    elif ord(c)+i>90:
+        print(chr(64+(ord(c)+i)%90),end='')
+    else:
+        print(chr(ord(c)+i),end='')
+"""
 
+""" 
+# 성 쌓기
+
+n_lst = list(map(int,input().split()))
+
+for i in range(4):
+    for j in range(4+i):
+        print(n_lst[j],end=' ')
+    print()
+"""
+""" 
+# 늘어나는 글자
+
+s=input()
+
+for i in range(len(s)):
+    for j in range(i+1):
+        print(s[j],end='')
+    print()
+"""
+
+# 두 배열 머지(Merge)하기
+
+A = list(map(int,input().split()))
+B = list(map(int,input().split()))
+result = []
 
 
 
