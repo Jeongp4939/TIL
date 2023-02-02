@@ -1013,7 +1013,6 @@
 
 # print(is_stable(ground))
  """
-
 """ 
 arr = [[i for i in range(4*j+1,4*j+4+1)] for j in range(4)]
 new_arr = [[0]*4 for _ in range(4)]
@@ -1100,7 +1099,6 @@ for i in range(2):
             y,x = i,j
 print(f'({y},{x})')
 """
-
 """ 
 # 다섯 글자 역순 출력 재귀함수 이용
         
@@ -1125,7 +1123,6 @@ def recursive_call(a,b):
 a,b = map(int,input().split())
 recursive_call(a,b)
 """
-
 """ 
 # 재귀 부메랑
 lst = [3,7,4,1,9,4,6,2]
@@ -1139,7 +1136,6 @@ def bumerang(n):
 idx = int(input())
 bumerang(idx)
  """
-
 """
 # 없어질 때까지 나눠먹기
 
@@ -1152,8 +1148,6 @@ def division_by2(n):
 
 division_by2(n)
 """
-
-
 """ 
 # 앞으로 돌진하는 계단
 
@@ -1164,7 +1158,6 @@ for i in range(len(s)):
         print(s[j],end='')
     print()
 """
-
 """ 
 # 절반 나누기
 
@@ -1196,7 +1189,6 @@ if flag:
 else:
     print('걸리지않는다')
 """
-
 """ 
 # 일곱 계단 만들기
 c = input()
@@ -1209,7 +1201,6 @@ for i in range(-3,4,1):
     else:
         print(chr(ord(c)+i),end='')
 """
-
 """ 
 # 성 쌓기
 
@@ -1230,15 +1221,210 @@ for i in range(len(s)):
         print(s[j],end='')
     print()
 """
-
+""" 
 # 두 배열 머지(Merge)하기
 
 A = list(map(int,input().split()))
 B = list(map(int,input().split()))
 result = []
 
+def merge_sort(l_lst,result,r_lst):
+    if l_lst==[]:
+        result+=r_lst
+        l_lst = []
+        return result
+    elif r_lst==[]:
+        result+=l_lst
+        r_lst = []
+        return result
+    else:
+        if l_lst[0] <= r_lst[0]:
+            result.append(l_lst.pop(0))
+        elif l_lst[0] >= r_lst[0]:
+            result.append(r_lst.pop(0))
+    return merge_sort(l_lst,result,r_lst)
 
+print(*merge_sort(A,result,B))
+"""
+""" 
+# 원하는 패턴의 크기 적용
 
+arr = [[3,5,4,2,5],[3,3,3,2,1],[3,2,6,7,8],[9,1,1,3,2]]
+n,m = map(int,input().split())
+
+sum_map = [[0]*(5-m+1) for _ in range(4-n+1)]
+max_sum = 0
+y=x=0
+
+for i in range(4-n+1):
+    sum_lst=0
+    for j in range(5-m+1):
+        sum_map[i][j] = sum([arr[i+a][j+b] for a in range(n) for b in range(m)])
+    if max_sum<sum_map[i][j]:
+        max_sum=sum_map[i][j]
+
+is_over=False
+for i in range(4-n+1):
+    for j in range(5-m+1):
+        if sum_map[i][j] == max_sum:
+            print(f'({i},{j})')
+            is_over=True
+            break
+    if is_over:
+        break
+
+# 최대값의 가장 앞 인덱스를 출력해야 정답 인정-> sum_map을 생성하여 해결
+
+"""
+""" 
+# 재귀호출이 3개일 때
+
+def recursion(n):
+    if n==0:
+        return [0]
+    return recursion(n-1),recursion(n-1),recursion(n-1)
+
+print(recursion(2))
+"""
+""" 
+ID = 'qlqlaqkq'
+PW = 'tkaruqtkf'
+
+I = input()
+P = input()
+if I==ID and P==PW:
+    print('LOGIN')
+else:
+    print("INVALID")
+
+"""
+""" 
+def make_tree(l,b):
+    if l==1:
+        return [[0] for _ in range(b)]
+    return [make_tree(l-1,b) for _ in range(b)]
+
+lv = int(input())
+br = int(input())
+
+print(make_tree(lv,br))
+"""
+""" 
+# 입력 받은 레벨까지 재귀함수 동작
+def make_bin_tree(n,level=0):
+    print(level,end='')
+    if level == n:
+        return
+    make_bin_tree(n,level+1)
+    make_bin_tree(n,level+1)
+
+n = int(input())
+make_bin_tree(n)
+"""
+""" 
+# 긴 문장을 맨 앞으로
+
+s = []
+for _ in range(3):
+    s.append(input())
+
+if len(s[1])>len(s[0]):
+    if len(s[1])>len(s[2]):
+        s[0],s[1] = s[1],s[0]
+elif len(s[2])>len(s[0]):
+    if len(s[2])>len(s[1]):
+        s[0],s[2] = s[2],s[0]
+
+for i in s:
+    print(i)
+        
+"""
+""" 
+# 재귀는 몇 번(위에 함수 재사용)
+cnt = 0
+
+def make_bin_tree(n,b,level=0):
+    global cnt
+    cnt += 1
+    if level == n:
+        return
+    for _ in range(b):
+        make_bin_tree(n,b,level+1)
+        
+b,l = map(int,input().split())
+make_bin_tree(l,b)
+print(cnt)
+"""
+""" 
+# 글자수만큼 손가락 접기
+# 재귀
+
+def recur(n):
+    if n > 1:
+        print(n, end=' ')
+        recur(n-1)
+    return print(n, end=' ')
+
+s=input()
+recur(len(s))
+    
+"""
+""" 
+# 생일선물 마우스
+n = int(input())
+y=x=5
+for i in range(n):
+    s = input()
+    
+    if s == 'up':
+        y-=1
+    elif s == 'down':
+        y+=1
+    elif s == 'left':
+        x-=1
+    elif s == 'right':
+        x+=1
+    else:
+        print(f'{y},{x}')
+"""
+""" 
+# 너에게 가려면(절대값 계산)
+# 4x3 배열
+
+def absol(n):
+    if n<0:
+        return -n
+    return n
+
+A_idx= B_idx = (0,0)
+arr = [list(input()) for _ in range(4)]
+
+for i in range(4):
+    for j in range(3):
+        if arr[i][j] == 'A':
+            A_idx=(i,j)
+        if arr[i][j] == 'B':
+            B_idx=(i,j)
+
+print(absol(A_idx[0]-B_idx[0])+absol(A_idx[1]-B_idx[1]))
+"""
+""" 
+# 세로줄의 합과 해당 인덱스값 구하기
+sum_lst = []
+
+arr=[[3,4,1,5],[3,4,1,3],[5,2,3,6]]
+for j in range(4):
+    sum_line=0
+    for i in range(3):
+        sum_line+=arr[i][j]
+    sum_lst.append(sum_line)
+
+n = int(input())
+print(sum_lst[n])
+"""
+
+# 문자 양 옆으로 # 넣기
+# 문자가 처음이면 1번인덱스에만 끝이면 끝-1번 인덱스에만 #
 
 
 
