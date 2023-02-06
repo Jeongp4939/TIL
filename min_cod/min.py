@@ -1,4 +1,4 @@
-""" 
+"""
 # lst=[['D','A','T','A','W'],['B','B','Q','K']]
 
 # n = int(input())
@@ -7,7 +7,7 @@
 #     lst[0].sort()
 # else:
 #     lst[1].sort()
-    
+
 # for i in range(2):
 #     for j in range(len(lst[i])):
 #         print(lst[i][j],end='')
@@ -185,10 +185,10 @@
 
 # for i in range(-5,6):
 #     print(i, end=' ')
-    
+
 # for i in range(3,9):
 #     print(i, end=' ')
-    
+
 # n = int(input())
 # for i in range(n,n+3):
 #     print(str(i)*3)
@@ -302,7 +302,7 @@
 # for i in range(1,len(arr)):
 #     arr[i] += arr[i-1]
 
-# print(*arr) 
+# print(*arr)
 
 # flag = False
 # for _ in range(3):
@@ -318,7 +318,7 @@
 
 # for i in range(c):
 #     print(*range(a,b+1))
-        
+
 # arr = [[0 for _ in range(3)] for _ in range(6)]
 # cnt = 65
 # for i in range(2,-1,-1):
@@ -365,7 +365,7 @@
 # for i in n_list:
 #     for j in range(4):
 #         arr[i][j]=0
-        
+
 # for line in arr:
 #     print(*line)
 
@@ -486,23 +486,23 @@
 #         if target[i] in line:
 #             cnt[i]+=1
 # print(max(cnt))
-    
+
 # lst = [3,4,1,1,2,6,8,7,8,9,10]
 # def getSum(index,arr=lst):
 #     return sum(lst[index:index+5])
 
 # n = int(input())
 # print(getSum(n))
-    
+
 # def isExist(n):
 #     lst = [3,7,4,1,2,6]
 #     result='OK' if n in lst else 'NO'
 #     return result
-    
+
 # arr = []
 # for _ in range(2):
 #     arr.append(list(map(int,input().split())))
-    
+
 # for i in range(2):
 #     for j in range(2):
 #         arr[i][j] = isExist(arr[i][j])
@@ -545,7 +545,7 @@
 # cnt = 0
 # for i in range(len(ipt)):
 #     if ipt[i] == pw[i]:
-#        cnt+=1 
+#        cnt+=1
 #     else:
 #         print('fail')
 #         break
@@ -650,9 +650,9 @@
 #         abc(n+2)
 #     print(n,end=' ')
 
-# n=int(input())    
+# n=int(input())
 # abc(n)
-    
+
 
 # map = [[65000, 35, 42, 70],
 #        [70, 35, 65000, 1300],
@@ -677,9 +677,9 @@
 #             one_to_nine.remove(i)
 # one_to_nine.sort()
 # print(*one_to_nine)
-    
-    
-    
+
+
+
 # map=[[1, 3, 3, 5, 1],
 #     [3, 6, 2, 4, 2],
 #     [1, 9, 2, 6, 5]]
@@ -701,7 +701,7 @@
 #         check.append(key)
 # check.sort()
 # print(*check)
-    
+
 
 
 # cardlist=input()
@@ -732,7 +732,7 @@
 #     for i in line:
 #         if i in black:
 #             cnt+=1
-            
+
 # print(f'{cnt}명')
 
 # map = [['A', 'B', 'C'],
@@ -789,7 +789,7 @@
 #        [1,1,1,1,1],
 #        [3,3,5,9,2]]
 
-# def sum_d(y,x):    
+# def sum_d(y,x):
 #     sum_ = 0
 #     for i in range(4):
 #         if 0<=y+dy[i]<5 and 0<=x+dx[i]<5:
@@ -803,14 +803,14 @@
 #     for j in range(5):
 #         if max_sum<sum_d(i,j)[2]:
 #             max_coord_y,max_coord_x,max_sum = sum_d(i,j)
-    
+
 # print(max_coord_y,max_coord_x)
 
 # ground=[['_' for _ in range(5)] for _ in range(4)]
 # dy=[1,-1,0,0,1,1,-1,-1]
 # dx=[0,0,-1,1,1,-1,1,-1]
 
-# def boom(y,x):    
+# def boom(y,x):
 #     for i in range(8):
 #         if 0<=y+dy[i]<4 and 0<=x+dx[i]<5:
 #             ground[y+dy[i]][x+dx[i]]='#'
@@ -967,7 +967,7 @@
 # for i in range(len(train)):
 #     if train[i][1]==person[0] and train[i][0]==int(person[1]):
 #         print(i)
-        
+
 
 # vect = [[0]*3 for _ in range(4)]
 
@@ -1422,16 +1422,140 @@ for j in range(4):
 n = int(input())
 print(sum_lst[n])
 """
-
+""" 
 # 문자 양 옆으로 # 넣기
 # 문자가 처음이면 1번인덱스에만 끝이면 끝-1번 인덱스에만 #
 
+s = list(input())
 
+for c in input().split():
+    for i in range(len(s)):
+        if s[i] == c:
+            if i == 0:
+                s[i+1] = '#'
+            elif i == len(s)-1:
+                s[i-1] = '#'
+            else:
+                s[i-1],s[i+1] = '#','#'
 
+print(''.join(s))
+"""
+""" 
+# 중력문제
+things=[list(input()) for _ in range(4)]
 
+for floor in range(3):
+    for i in range(3,0,-1):
+        for j in range(3):
+            if things[i][j] == '_' and things[i-1][j] != '_':
+                things[i][j],things[i-1][j] = things[i-1][j],things[i][j]
 
+for line in things:
+    print(''.join(line))
+"""
+""" 
+# 카운팅정렬
+bucket = [0]*10
+result = [0]*8
+lst = list(map(int,input().split()))
 
+for i in lst:
+    bucket[i]+=1
 
+for i in range(1,10):
+    bucket[i] += bucket[i-1]
+
+for i in lst:
+    result[bucket[i]-1] = i
+    bucket[i]-=1
+
+print(result)
+"""
+""" 
+# 범위의 숫자 #으로 바꾸기
+arr = [[1,5,3],[4,5,5],[3,3,5],[4,6,2]]
+
+a, b = map(int,input().split())
+
+for i in range(len(arr)):
+    for j in range(len(arr[i])):
+        if a<arr[i][j]<b:
+            arr[i][j]=0
+        elif a==arr[i][j] or b==arr[i][j]:
+            arr[i][j]='#'
+
+for line in arr:
+    print(*line)
+"""
+"""
+# 바둑이 게임
+arr = [[0,0,0,0,0,0,0],
+       [0,0,1,0,1,0,0],
+       [0,1,2,0,2,1,0],
+       [0,0,1,2,1,0,0],
+       [0,0,2,1,0,1,0],
+       [0,1,1,0,0,0,0],
+       [0,0,0,0,0,0,0]]
+
+dy,dx=[0,0,1,-1],[1,-1,0,0]
+
+def is_eat(arr,y,x):
+    cnt = 0
+    for d in range(4):
+        if arr[y+dy[d]][x+dx[d]] == 1:
+            cnt+=1
+    if cnt==4:
+        return 1
+    return 0
+
+y,x = map(int,input().split())
+arr[y][x] = 1
+
+result = 0
+for i in range(6):
+    for j in range(6):
+        if arr[i][j]==2:
+            if is_eat(arr,i,j):
+                result+=1
+
+print(result)
+"""
+"""
+# 모델 위치 지시하기
+arr=[['_','_','_'],
+     ['_','_','_'],
+     ['A','T','K'],
+     ['_','_','_'],
+     ['_','_','_']]
+
+for _ in range(7):
+    model, cmd = input().split()
+    flag = True
+    for i in range(5):
+        for j in range(3):
+            if model == arr[i][j]:
+                if cmd == 'UP':
+                    arr[i][j],arr[i-1][j] = arr[i-1][j],arr[i][j]
+                    flag=False
+                    break
+                elif cmd == 'DOWN':
+                    arr[i][j],arr[i+1][j] = arr[i+1][j],arr[i][j]
+                    flag = False
+                    break
+                elif cmd == 'RIGHT':
+                    arr[i][j],arr[i][j+1] = arr[i][j+1],arr[i][j]
+                    flag = False
+                    break
+                elif cmd == 'LEFT':
+                    arr[i][j],arr[i][j-1] = arr[i][j-1],arr[i][j]
+                    flag = False
+                    break
+        if not flag:
+            break
+
+for line in arr:
+    print(''.join(line))
+"""
 
 
 
