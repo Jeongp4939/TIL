@@ -1557,44 +1557,233 @@ for line in arr:
     print(''.join(line))
 """
 
+"""
+# 경로 출력
 
+def abc(level,s=''):
 
+    if level==2:
+        # AA,AB,AC
+        print(s)
+        return
 
+    for i in ['A','B','C']:
+        abc(level+1,s+i)
 
+abc(0)
+"""
+"""
+# 같은 문장 찾기
+s = [input() for _ in range(3)]
 
+if s[0]==s[1] and s[1]==s[2]:
+    print('WOW')
+elif s[0]==s[1] or s[1]==s[2] or s[0]==s[2]:
+    print('GOOD')
+else:
+    print('BAD')
+"""
+"""
+# 경로이름은 BGTK
 
+n = int(input())
 
+def abc(level,s=''):
 
+    if level==n:
+        print(s)
+        return
 
+    for i in ['B','G','T','K']:
+        abc(level+1,s+i)
 
+abc(0)
+"""
+"""
+# Up&Down
+S = [input() for _ in range(5)]
+cnt=1
 
+for s in S:
+    if s=='up':
+        cnt+=1
+    elif s=='down':
+        cnt-=1
+if cnt>0:
+    print(cnt)
+else:
+    print(f'B{-cnt+1}')
+"""
+"""
+# 청소당번
+n = int(input())
 
+def cleaner(level,s=''):
+    if level==4:
+        print(s)
+        return
+    for i in range(1,n+1):
+        cleaner(level+1,s+str(i))
+cleaner(0)
+"""
+"""
+# 가장 긴 문장, 짧은 문장은 어디에
+S = [input() for _ in range(4)]
 
+max_len = 0
+min_len = 10**8
+max_idx = 0
+min_idx = 0
 
+for s in range(4):
+    if len(S[s])<min_len:
+        min_len=len(S[s])
+        min_idx=s
+    if len(S[s])>max_len:
+        max_len=len(S[s])
+        max_idx=s
 
+print(f'긴문장:{max_idx}')
+print(f'짧은문장:{min_idx}')
+"""
+"""
+# 몇번째 행운
+cnt = 0
+ipt = input()
+def abcd(level,s=''):
+    global cnt
+    if level==3:
+        cnt+=1
+        if s == ipt:
+            print(f'{cnt}번째')
+            return
+        return
+    for i in ['A','B','C','D']:
+        abcd(level+1,s+i)
 
+abcd(0)
+"""
+"""
+# 3차 배열에서 MAX MIN 찾기
+arr = [[[2,4],[1,5]],[[2,3],[3,6]],[[7,3],[1,5]]]
+n = int(input())
+min_n = 10**8
+max_n = 0
+for i in range(2):
+    for j in range(2):
+        if arr[n][i][j] > max_n:
+            max_n=arr[n][i][j]
+        if arr[n][i][j] < min_n:
+            min_n=arr[n][i][j]
+print(f'MAX={max_n}')
+print(f'MIN={min_n}')
+"""
+"""
+# 암호 해독하기
+pw = ['Jason','Dr.tom','EXEXI','GK12P','POW']
+p = input()
 
+if p in pw:
+    print('암호해제')
+else:
+    print('암호틀림')
+"""
+"""
+# 3차원 배열과 문자의 발견여부
+arr = [[['A','T','B'],
+        ['C','C','B']],
+       [['A','A','A'],
+        ['B','B','C']]]
 
+def is_In(a):
+    for i in range(2):
+        for j in range(2):
+            for k in range(3):
+                if arr[i][j][k]==a:
+                    return print('발견')
+    return print('미발견')
 
+c = input()
+is_In(c)
+"""
+"""
+# 바람둥이 (ox 이진)
+n = int(input())
+def wind(level,s=''):
+    if level==n:
+        return print(s)
+    for i in ['x','o']:
+        wind(level+1,s+i)
+wind(0)
+"""
+"""
+# 문자를 채우다
 
+s = input()
 
+for i in range(3):
+    temp = [chr(ord(s)+i)*3 for _ in range(3)]
+    for line in temp:
+        print(''.join(line))
+    print()
+"""
+"""
+# 한줄 a 한줄 b
+a,b = map(int,input().split())
 
+for i in range(3):
+    temp = [[a]*3]
+    temp.append([b]*3)
 
+    for line in temp:
+        print(*line)
+    print()
+"""
+"""
+# Mapping
+Map = [[3,5,4,2,2,3],
+       [1,3,3,3,4,2],
+       [5,4,4,2,3,5]]
+price = {1:'T',2:'P',3:'G',4:'K',5:'C'}
+coord = {'A':0,'B':1,'C':2,1:0,2:1,3:2,4:3,5:4,6:5}
+a,b = input().split()
+print(price[Map[coord[a]][coord[int(b)]]])
+"""
+"""
+# 문장정렬
+s_lst=[input() for _ in range(4)]
+s_lst = sorted(s_lst, key=lambda x:len(x))
 
+for s in s_lst:
+    print(s)
+"""
 
+# 이니셜 뽑기
 
+arr = [[[' ','#',' '],
+        ['#',' ','#'],
+        ['#','#','#'],
+        ['#',' ','#'],
+        ['#',' ','#']],
+       [['#','#','#'],
+        ['#',' ','#'],
+        ['#','#','#'],
+        ['#',' ','#'],
+        ['#','#','#']],
+       [['#','#','#'],
+        ['#',' ','#'],
+        ['#',' ',' '],
+        ['#',' ','#'],
+        ['#','#','#']],
+       [['#','#',' '],
+        ['#',' ','#'],
+        ['#',' ','#'],
+        ['#',' ','#'],
+        ['#','#',' ']]]
 
-
-
-
-
-
-
-
-
-
-
-
+n = int(input())
+for line in arr[n]:
+    print(''.join(line))
 
 
 
