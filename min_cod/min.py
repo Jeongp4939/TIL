@@ -191,7 +191,7 @@
 
 # n = int(input())
 # for i in range(n,n+3):
-#     print(str(i)*3)
+#     print(st(i)*3)
 
 # pw = input()
 # if pw=='1 2 3 4':
@@ -267,7 +267,7 @@
 #      ['B','B','Q','Q'],
 #      ['T','P','Z','F']]
 
-# a,b = map(str,input().split())
+# a,b = map(st,input().split())
 # cnt = 0
 # for arr_line in arr:
 #     if a in arr_line:
@@ -560,7 +560,7 @@
 # for fruit in fruits:
 #     for i in range(len(levelTable)):
 #         if levelTable[i][0]<=fruit<=levelTable[i][1]:
-#             level['lev'+str(i)] += 1
+#             level['lev'+st(i)] += 1
 # for lev,cnt in level.items():
 #     print(f'{lev}:{cnt}')
 
@@ -752,7 +752,7 @@
 # train_str=''
 # team = ''.join(input().split())
 # for i in train:
-#     train_str+=str(i)
+#     train_str+=st(i)
 # n = train_str.index(team)
 # print(f'{n}번~{n+len(team)-1}번 칸')
 
@@ -1039,7 +1039,7 @@ for line in new_arr:
 arr = [[0]*4 for _ in range(4)]
 
 for _ in range(3):
-    a,b = map(str,input().split())
+    a,b = map(st,input().split())
     if a == 'G':
         for i in range(4):
             arr[int(b)][i]=1
@@ -1623,7 +1623,7 @@ def cleaner(level,s=''):
         print(s)
         return
     for i in range(1,n+1):
-        cleaner(level+1,s+str(i))
+        cleaner(level+1,s+st(i))
 cleaner(0)
 """
 """
@@ -1757,7 +1757,7 @@ s_lst = sorted(s_lst, key=lambda x:len(x))
 for s in s_lst:
     print(s)
 """
-
+"""
 # 이니셜 뽑기
 
 arr = [[[' ','#',' '],
@@ -1784,8 +1784,230 @@ arr = [[[' ','#',' '],
 n = int(input())
 for line in arr[n]:
     print(''.join(line))
+"""
 
+# 1등, 2등, 3등 선물 주기
+"""
+st = input()
 
+def abc(level,s=''):
+    if level == 3:
+        return print(s)
 
+    for i in st:
+        if i in s:
+            continue
+        else:
+            abc(level+1,s+i)
 
+abc(0)
+"""
+"""
+# 다툰친구 B와 T
 
+st = input()
+cnt = 0
+
+def abc(level,s=''):
+    global cnt
+    if level==4:
+        if 'BT' in s or 'TB' in s:
+            return
+        cnt += 1
+        return
+    for i in st:
+        abc(level+1,s+i)
+
+abc(0)
+print(cnt)
+"""
+"""
+# ABC초콜릿
+n = int(input())
+cnt = 0
+
+def abc(level,s=''):
+    global cnt
+    if level==n:
+        if 'AAA' in s or 'BBB' in s or 'CCC' in s:
+            return
+        cnt += 1
+        return
+    for i in 'ABC':
+        abc(level+1,s+i)
+
+abc(0)
+print(cnt)
+"""
+"""
+# 산타소년단
+
+n = int(input())
+cnt = 0
+
+def abc(level,s=''):
+    global cnt
+    if level==n:
+        if 'S' in s:
+            cnt+=1
+        return
+    for i in 'BTSKR':
+        if i in s:
+            continue
+        else:
+            abc(level+1,s+i)
+
+abc(0)
+print(cnt)
+"""
+"""
+# 미안하다 친구야
+
+st = 'EWABC'.replace(input(),'')
+
+def abc(level,s=''):
+    if level==4:
+        return print(s)
+
+    for i in st:
+        if i in s:
+            continue
+        else:
+            abc(level+1,s+i)
+
+abc(0)
+"""
+"""
+# 다섯종류의 숫자카드
+
+num=input()
+cnt =0
+def abc(level,s=''):
+    global cnt
+    if level==4:
+        cnt+=1
+        return
+    for i in num:
+        if s:
+            if abs(int(s[-1])-int(i)) <= 3:
+                abc(level+1,s+i)
+        else:
+            abc(level + 1, s + i)
+
+abc(0)
+print(cnt)
+"""
+"""
+# 왼쪽, 오른쪽 이동
+
+def l_Roll(st):
+    return st[1:]+[st[0]]
+def r_Roll(st):
+    return [st[-1]]+st[:-1]
+
+arr = [3,5,1,9,7]
+for i in range(4):
+    cmd = input()
+
+    if cmd=='R':
+        arr = r_Roll(arr)
+    else:
+        arr = l_Roll(arr)
+print(*arr)
+"""
+"""
+# 암살자 존휙
+
+lst=[]
+for i in range(3):
+    lst.append(input().split())
+
+if lst[0][0] == lst[1][0] or lst[0][0] == lst[2][0] or lst[1][0] == lst[2][0]:
+    print('위험')
+elif lst[0][1] == lst[1][1] or lst[0][1] == lst[2][1] or lst[1][1] == lst[2][1]:
+    print('위험')
+else:
+    print('안전')
+"""
+"""
+# 네모네모 더하기
+arr = []
+for i in range(3):
+    arr.append(list(map(int,input().split()))+[0])
+arr.append([0]*4)
+
+for i in range(3):
+    arr[i][3] = sum(arr[i][:3])
+
+sum_ = 0
+for i in range(3):
+    sum_+=arr[i][i]
+arr[3][3] = sum_
+
+for j in range(3):
+    sum_=0
+    for i in range(3):
+        sum_+=arr[i][j]
+    arr[3][j]=sum_
+
+for line in arr:
+    print(*line)
+"""
+"""
+arr = [[3,5,4,1],
+       [1,1,2,3],
+       [6,7,1,2]]
+
+flag = [[0]*4 for _ in range(4)]
+
+lst = list(map(int,input().split()))
+for n in range(len(lst)):
+    for i in range(3):
+        for j in range(4):
+            if arr[i][j] == lst[n] and not flag[i][j]:
+                arr[i][j] = lst[(n+1)%4]
+                flag[i][j] = 1
+
+for line in arr:
+    print(*line)
+"""
+"""
+# 자기 자리 찾기
+
+lst = list(map(int,input().split()))
+
+st = 1
+ed = len(lst)-1
+while st<ed:
+    if lst[st]<lst[0]:
+        for i in range(st,len(lst)):
+            if lst[i] > lst[0]:
+                st = i
+                break
+    if lst[ed]>lst[0]:
+        for j in range(ed,1,-1):
+            if lst[j] < lst[0]:
+                ed = j
+                break
+    if st<ed:
+        lst[st],lst[ed] = lst[ed],lst[st]
+lst[j], lst[0] = lst[0], lst[j]
+
+print(*lst)
+"""
+
+arr1 = [list(input()) for _ in range(4)]
+arr2 = [['A','B','C','D'],
+        ['B','B','A','B'],
+        ['C','B','A','C'],
+        ['B','A','A','A']]
+
+dic = {'A':0,'B':0,'C':0,'D':0}
+
+for i in range(4):
+    for j in range(4):
+        if arr1[i][j]==arr2[i][j]:
+            dic[arr1[i][j]]+=1
+gold_coord = sorted(dic.items(),key=lambda x:x[1],reverse=True)
+
+print(gold_coord[0][0])
