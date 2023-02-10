@@ -1995,7 +1995,7 @@ lst[j], lst[0] = lst[0], lst[j]
 
 print(*lst)
 """
-
+"""
 arr1 = [list(input()) for _ in range(4)]
 arr2 = [['A','B','C','D'],
         ['B','B','A','B'],
@@ -2011,3 +2011,5 @@ for i in range(4):
 gold_coord = sorted(dic.items(),key=lambda x:x[1],reverse=True)
 
 print(gold_coord[0][0])
+"""
+
