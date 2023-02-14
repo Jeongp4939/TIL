@@ -59,7 +59,6 @@ else:
 """
 """
 # 인접행렬 DFS 시작
-
 def DFS(root=0):
     print(root,end=' ')
     if not nodes[root]:
@@ -83,7 +82,7 @@ for i in range(n):
 
 DFS(0)
 """
-
+"""
 # 2층에서 경로 출력
 
 path = [0]*3
@@ -112,4 +111,30 @@ for i in range(n):
             nodes[i].append(j)
 
 DFS(0)
+"""
+"""
+# 문자열 노드 DFS
+def DFS(root=0):
+    print(s[root],end='')
+    if not nodes[root]:
+        return
 
+    visited[root] = 1
+    for i in nodes[root]:
+        if visited[i]!=1:
+            DFS(i)
+
+s = input()
+n = len(s)
+arr = [list(map(int,input().split())) for _ in range(n)]
+
+nodes = [[] for _ in range(n)]
+visited = [0]*n
+
+for i in range(n):
+    for j in range(n):
+        if arr[i][j]==1:
+            nodes[i].append(j)
+
+DFS(0)
+"""
