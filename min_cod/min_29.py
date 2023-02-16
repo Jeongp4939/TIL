@@ -162,5 +162,91 @@ for i in range(4):
 print(f'({st[0]},{st[1]})')
 print(f'({ed[0]},{ed[1]})')
 """
+"""
+# 톱니바퀴
+arr = [['3','2','5','3'],
+       ['7','6','1','6'],
+       ['4','9','2','7']]
+def roll(i,n):
+    arr[(n)%3][i],arr[(1+n%3)%3][i],arr[(2+n%3)%3][i]= arr[0][i],arr[1][i],arr[2][i]
+a,b,c,d = map(int,input().split())
+for i,ch in enumerate([a,b,c,d]):
+    roll(i,ch)
+
+for line in arr:
+    print(''.join(line))
+"""
+"""
+# 지렁이 놓기
+
+a,b = map(int,input().split())
+
+def jirung(a,b):
+    lst = ['_'] * 5
+    if a>=4 or b==0:
+        print(''.join(lst))
+        return
+    lst[a]=str(b)
+    print(''.join(lst))
+    jirung(a+1,b-1)
+jirung(a,b)
+"""
+"""
+# 움직이는 몬스터
+
+dy,dx=[0,1,0,-1],[1,0,-1,0] # 우 하 좌 상
+
+arr = [list(input()) for _ in range(4)]
+monster = {}
+
+for i in range(4):
+    for j in range(3):
+        if arr[i][j].isalpha():
+            monster[arr[i][j]] = [i,j]
+
+monster = dict(sorted(monster.items(),key=lambda x:x[0]))
+
+for i in range(5):
+    for j in monster.keys():
+        ny = monster[j][0] + dy[i%4]
+        nx = monster[j][1] + dx[i%4]
+        if 0<=ny<4 and 0<=nx<3:
+            if arr[ny][nx].isalpha() or arr[ny][nx]=='#':
+                continue
+            else:
+                arr[ny][nx],arr[monster[j][0]][monster[j][1]] = arr[monster[j][0]][monster[j][1]],arr[ny][nx]
+                monster[j][0] += dy[i%4]
+                monster[j][1] += dx[i%4]
+
+for line in arr:
+    print(''.join(line))
+"""
+"""
+# 같은 단어 찾기
+# 두 문장을 입력 받아 가장 긴 공통된 문자열을 출력
+s1 = input()
+s2 = input()
+m1 = len(s1)
+m2 = len(s2)
+max_len = 0
+max_s=''
+
+for i in range(m1):
+    for j in range(m2):
+        if s1[i] == s2[j]:
+            s_len = 0
+            s = ''
+            for k in range(min(m1-i,m2-j)):
+                if s1[i+k]==s2[j+k]:
+                    s+=s1[i+k]
+                    s_len+=1
+                else:
+                    break
+            if s_len > max_len:
+                max_len = s_len
+                max_s = s
+
+print(max_s)
+"""
 
 
