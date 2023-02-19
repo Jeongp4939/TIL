@@ -2,7 +2,7 @@ dy = [-1,1,0,0,1,1,-1,-1]
 dx = [0,0,-1,1,1,-1,1,-1]
 
 def is_Sink(y,x):
-    global Max
+    Max=0
     cnt=0
     for d in range(8):
         ny = y+dy[d]
@@ -13,8 +13,8 @@ def is_Sink(y,x):
                 if arr[ny][nx]-arr[y][x] > Max:
                     Max = arr[ny][nx]-arr[y][x]
     if cnt==8:
-        return 1
-    return 0
+        return 1, Max
+    return 0 , 0
 
 for tc in range(1,int(input())+1):
     n = int(input())
@@ -23,7 +23,10 @@ for tc in range(1,int(input())+1):
     arr = [list(map(int,input().split())) for _ in range(n)]
     for i in range(1,n-1):
         for j in range(1,n-1):
-            rlt += is_Sink(i,j)
+            cnt, M = is_Sink(i,j)
+            rlt+=cnt
+            if M>Max:
+                Max=M
 
     print(f'#{tc} {rlt} {Max}')
 
