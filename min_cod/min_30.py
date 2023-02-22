@@ -189,32 +189,7 @@ for _ in range(n):
             rlt += 26**(len(s)-c-1)*(alpha.index(s[c]))
     print(rlt)
 """
-"""
-# 다섯형제 10-20
-# 중복 제거해야함
 
-cnt = 0
-path=[]
-def abc(level=0,idx=0,sum=0):
-    global cnt
-    if level==5 or sum>20:
-        return
-    if 10<=sum<=20:
-        cnt+=1
-    for i in range(5):
-        if idx<=i and used[i]!=1:
-            idx=i
-            path.append(lst[i])
-            used[i]=1
-            abc(level+1,idx,sum+lst[i])
-            path.pop()
-            used[i]=0
-
-lst = list(map(int,input().split()))
-used = [0]*5
-abc()
-print(cnt)
-"""
 """
 # 다시 풀어보는 출동 순서
 # 5번째 출동
@@ -230,3 +205,25 @@ for i in range(4):
     rlt.append(lst.pop())
 print(*rlt)
 """
+
+# 다섯형제 10-20
+# 중복 제거해야함
+
+cnt = 0
+def abc(level=0,idx=0,sum=0):
+    global cnt
+    if level==5 or sum>20:
+        return
+    if 10<=sum<=20:
+        cnt+=1
+    for i in range(5):
+        if idx<=i and used[i]!=1:
+            idx=i
+            used[i]=1
+            abc(level+1,idx,sum+lst[i])
+            used[i]=0
+
+lst = list(map(int,input().split()))
+used = [0]*5
+abc()
+print(cnt)
