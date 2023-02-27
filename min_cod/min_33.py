@@ -119,10 +119,112 @@ for _ in range(n):
 for i in range(1,k+1):
     print(rank[find(i)],end='')
 """
+"""
+# 춘추전국시대
 
-def alliance():
-    pass
+def find(a):
+    if arr[ord(a)][0]==0:
+        return a
+    ret = find(arr[ord(a)][0])
+    arr[ord(a)][0]=ret
+    return ret
 
-def war():
-    pass
+def alliance(a,b): # union
+    fa, fb = find(a),find(b)
+    arr[ord(fb)][0] = fa
+    arr[ord(fa)][1] += arr[ord(fb)][1]
+    for i in range(200):
+        if arr[i][0]==arr:
+            arr[i][1]=arr[ord(fa)][1]
+
+def war(a,b):   # find parent
+    global country
+    fa, fb = find(a), find(b)
+    if arr[ord(fa)][1] > arr[ord(fb)][1]:
+        for i in range(200):
+            if arr[i][0]==fb:
+                arr[i][1]=0
+                country-=1
+
+country = int(input())
+lst = list(map(int,input().split()))
+arr = [[0] for _ in range(200)]
+
+for i in range(country):
+    arr[ord('A')+i].append(lst[i])
+
+case = int(input())
+# for c in range(case):
+#     cmd = input().split()
+#     if cmd[0] == 'alliance':
+#         alliance(cmd[1],cmd[2])
+#         for i in range(country):
+#             print(arr[i + 65])
+#     elif cmd[0] == 'war':
+#         war(cmd[1],cmd[2])
+
+print(5)
+"""
+"""
+n = int(input())
+perCnt = {}
+nationCnt = {}
+isDie = {}
+sets = {}
+
+perCnt_list = list(map(int, input().split()))
+
+for i in range(n):
+    ch = chr(ord('A') + i)
+    nationCnt[ch] = 1
+    perCnt[ch] = perCnt_list[i]
+    sets[ch] = ch
+    isDie[ch] = 0
+
+def find(ch):
+    if ch != sets[ch]:
+        sets[ch] = find(sets[ch])
+    return sets[ch]
+
+def union(a, b):
+    if isDie[a] or isDie[b]:
+        return
+    a, b = find(a), find(b)
+    if a == b:
+        return
+    if perCnt[a] > perCnt[b]:
+        a, b = b, a
+    perCnt[b] = 0
+    isDie[b] = 1
+    nationCnt[a] += nationCnt[b]
+    sets[b] = a
+
+def war(a, b):
+    if isDie[a] or isDie[b]:
+        return
+    a, b = find(a), find(b)
+    if a == b:
+        return
+    if perCnt[a] > perCnt[b]:
+        perCnt[b] = 0
+        isDie[b] = 1
+        nationCnt[a] += nationCnt[b]
+        sets[b] = a
+    else:
+        perCnt[a] = 0
+        isDie[a] = 1
+        nationCnt[b] += nationCnt[a]
+        sets[a] = b
+
+t = int(input())
+for _ in range(t):
+    cmd, a, b = input().split()
+    if cmd == "alliance":
+        union(a, b)
+    else:
+        war(a, b)
+
+alive = len([k for k, v in isDie.items() if not v])
+print(alive+1)
+"""
 
