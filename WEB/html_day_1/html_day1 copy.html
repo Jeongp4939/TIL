@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style_2.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="large-box">
+    <div class="midium-box">
+      <div class="small-box"></div>
+    </div>
+  </div>
+  <hr>
+  <ul>
+    <li>파이썬</li>
+    <li>자바</li>
+    <li>씨</li>
+  </ul>
+
+  <ol start="3" type="i">
+    <li>파이썬</li>
+    <li>자바</li>
+    <li>씨</li>
+  </ol>
+  <a href="https://www.google.com">구글을구글구글</a>
+  
+  <!-- input tag -->
+  <p>아이디 : <input type="text" name="" id=""></p>
+  
+  <!-- autofocus 커서위치를 바로 그 자리로 옮겨줌 -->
+  <p>아이디 : <input type="text" autofocus></p>
+  <p>비밀번호 : <input type="password"></p>
+
+  <hr>
+  
+  <!-- form -->
+  <form action="서버페이지의 url">
+    <p>email을 적어 주세요</p>
+    <input type="email">
+    <input type="submit">
+  </form>
+  
+  <input type="button" value="절대 이 버튼을 누르지 마시오"><br>
+  <input type="number"><br>
+  <input type="checkbox"><br>
+  <input type="radio"><br>
+  <input type="submit"><br>
+  <input type="file"><br>
+  <input type="date"><br>
+  
+  <label for="asdf">여기 클릭해 보세요</label>
+  <input id="asdf" type="checkbox">
+
+  <select>
+    <option value="python">파이썬</option>
+    <option value="java">자바</option>
+    <option value="c">씨</option>
+  </select>
+
+  실습
+
+  <h3>먹고 싶은 것을 선택하시오(중복체크 가능)</h3>
+  <p>
+    치킨<input type="checkbox" name="치킨" id="">
+    피자<input type="checkbox" name="피자" id="">
+    떡볶이<input type="checkbox" name="떡볶이" id="">
+    오리탕<input type="checkbox" name="오리탕" id="">
+    김떡순<input type="checkbox" name="김떡순" id="">
+  </p>
+  <hr>
+  <h3>해당 되는 트랙을 체크하시오</h3>
+  <p>
+    파이썬<input type="radio" id="반">
+    자바<input type="radio" id="반">
+    임베디드<input type="radio" id="반">
+  </p>
+  <p>
+    해당 반을 선택하세요
+    <select id="">
+      <option>파이썬</option>
+      <option>자바</option>
+      <option>임베디드</option>
+    </select>
+  </p>
+
+  <header>
+    <!-- 싸피 홈페이지로 이동하는 링크 -->
+    <a href="https://www.ssafy.com">
+      <img src="ssafy.png" alt="싸피 로고" ,width="300">
+      <!-- <img> 태그의 alt 속성은 이미지를 보여줄 수 없을 때 해당 이미지를 대체할 텍스트를 명시합니다.
+            이미지가 로드 된다면 해당글은 안보임 -->
+    </a>
+    <h1>학생 건강 설문</h1>
+  </header>
+
+  <section>
+    <form action="#">
+      <!-- 이름 -->
+      <div>
+        <label for="name">이름을 기재해주세요.</label><br>
+        <input type="text" id="name" name="name" autofocus>
+        <!-- input에 name 속성을 서로 같게 맞춰줘서 연관이 있는 input임을 명시해주고 사용한다. 나중에 뒤에 보자 -->
+      </div>
+      <!-- 지역 -->
+      <div>
+        <label for="region">지역을 선택해주세요.</label><br>
+        <select name="region" id="region" required>
+          <!-- required 속성은 폼 데이터(form data)가 서버로 제출되기 전 반드시 채워져 있어야 하는 입력 필드를 명시합니다. -->
+          <option value="">선택</option>
+          <option value="서울">서울</option>
+          <option value="대전">대전</option>
+          <option value="광주">광주</option>
+          <option value="구미">구미</option>
+          <option value="강원" disabled>강원</option>
+          <!-- disabled은 비 활성화 -->
+        </select>
+
+      </div>
+      <!-- 체온 -->
+      <div>
+        <p>오늘의 체온을 선택해주세요.</p>
+        <input type="radio" name="body-heat" id="normal" value="normal" checked>
+        <label for="normal">37도 미만</label><br>
+        <input type="radio" name="body-heat" id="warning" value="warning">
+        <label for="warning">37도 이상</label><br>
+        <!-- input에 name 속성을 서로 같게 맞춰줘서 연관이 있는 input임을 명시해주고 사용한다. 없으면 2개가 클릭됨 -->
+      </div>
+
+      <input type="submit" value="제출">
+    </form>
+  </section>
+
+  <footer>
+    Google 설문지를 통해 비밀번호를 제출하지 마시오.
+  </footer>
+
+
+  <div class="ssafy">파이썬</div>
+    <div>자바</div>
+    <div class="ssafy">씨쁠쁠</div>
+
+    <a href="#" id="asdf">google</a>
+
+    <a href="#">네이버</a>
+    <p>
+        자바스크립트
+    </p>
+</body>
+</html>

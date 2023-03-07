@@ -1,0 +1,3 @@
+function barking(){
+  alert("Aaaaaaaaaaaaaaa")
+}

@@ -1,0 +1,21 @@
+h1{
+  font-style: inherit;
+  border:1px;
+  color: blueviolet;
+}
+
+p{
+  padding:0;
+}
+
+img{
+  object-fit: contain;
+  width: 10rem;
+  height: 10rem;
+}
+
+* {
+  padding: 0.5rem;
+  margin: 0rem;
+}
+
