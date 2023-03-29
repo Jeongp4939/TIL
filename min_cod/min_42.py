@@ -202,3 +202,48 @@ Max=0
 dfs()
 print(f'{Max}점')
 """
+
+# 폭탄 투하 장소 선정
+
+import copy
+
+def bomb(carr, ci, cj):
+    for di, dj in ((-1, 0), (1, 0), (0, 0), (0, -1), (0, 1)):
+        ni, nj = ci + di, cj + dj
+        if 0 <= ni < 4 and 0 <= nj < 4:
+            carr[ni][nj] = '_'
+
+
+def dfs(level, start):
+    global val, result
+
+    if level == N:
+        carr = copy.deepcopy(arr)
+        for i in range(4):
+            for j in range(4):
+                for k in path:
+                    if carr[i][j] == k:
+                        bomb(carr, i, j)
+        temp = 0
+        for i in range(4):
+            for j in range(4):
+                if carr[i][j] == '_':
+                    temp += 1
+        if val < temp:
+            val = temp
+            result = path[:]
+        return
+    for i in range(start, 16):
+        path.append(chr(ord('A') + i))
+        dfs(level + 1, i + 1)
+        path.pop()
+
+arr = [list(input()) for _ in range(4)]
+N = int(input())
+path = []
+val = 0
+result = []
+
+
+dfs(0, 0)
+print(*result)
