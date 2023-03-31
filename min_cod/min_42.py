@@ -202,7 +202,7 @@ Max=0
 dfs()
 print(f'{Max}점')
 """
-
+"""
 # 폭탄 투하 장소 선정
 
 import copy
@@ -247,3 +247,87 @@ result = []
 
 dfs(0, 0)
 print(*result)
+
+"""
+"""
+# 수학이의 연산자
+
+def calc(n,a,b):
+    if n == 0:
+        return (a-b)*(a+b)
+    if n == 1:
+        return max(a,b)
+    if n == 2:
+        return a*a - b*b
+    if n == 3:
+        return (a+b)*(a+b)
+
+def dfs(lvl,result):
+    global cnt
+    if lvl >n-2 or result > 100:
+        return
+    if lvl == n-2 and result == 100:
+        cnt +=1
+        return
+    for i in range(4):
+        dfs(lvl+1, calc(i,result,A[lvl+1]))
+
+n = int(input())
+A = list(map(int,input().split()))
+cnt = 0
+dfs(0,A[0])
+print(cnt)
+"""
+"""
+def dfs(score=[],idx=0):
+    global Max
+    if 0 not in visited:
+        if tuple(score) not in R:
+            R.add(tuple(score))
+            return
+    for i in range(idx,n):
+        if not visited[i]:
+            tmp=[]
+            for d in (-1,0,1):
+                if 0<=i+d<n:
+                    if not visited[i+d]:
+                        tmp.append(i+d)
+                        visited[i+d]=1
+            score.append(A[i])
+            dfs(score,i+1)
+            score.pop()
+            for t in tmp:
+                visited[t]=0
+
+n = int(input())
+A = list(map(int,input().split()))
+visited= [0]*n
+R = set()
+
+dfs()
+
+# sort를 이용해 합이 큰 순으로 정렬
+R_lst=list(R)
+R_lst.sort(key=lambda x:sum(x), reverse=True)
+
+result = R_lst[0][:]
+
+print(f'{"+".join(map(str,result))}={sum(result)}')
+"""
+"""
+# 독수리 3형제
+
+birds = [(0,1,2),(3,4,5),(1,2,3,4)]
+foods = list(map(int,input().split()))
+n = int(input())
+
+for i in range(n):
+    for j in range(3):
+        
+        pass
+
+
+"""
+
+# 디자이너의 손길
+
