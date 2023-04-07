@@ -37,3 +37,20 @@
     WHERE CAR_TYPE='SUV';
 ```
 
+### 인기있는 아이스크림
+```sql
+    SELECT FLAVOR FROM FIRST_HALF
+    ORDER BY TOTAL_ORDER DESC, SHIPMENT_ID ASC
+```
+
+### 서울에 위치한 식당 목록 출력하기
+```sql
+    SELECT A.REST_ID, B.REST_NAME, B.FOOD_TYPE, B.FAVORITES, B.ADDRESS, ROUND(AVG(A.REVIEW_SCORE),2) AS SCORE   -- AVG()를 기준으로 A>REVIEW_SCORE의 평균을 구하고, ROUND()를 이용하여 2+1번째 자리에서 반올림
+    FROM REST_REVIEW A  -- REST_REVIEW를 기준으로 JOIN 연산을 수행, A라는 별칭을 줌
+    INNER JOIN REST_INFO B ON A.REST_ID=B.REST_ID   -- ON으로 REST_ID를 조건으로 줌, REST_INFO의 별칭을 B로 함
+    GROUP BY A.REST_ID  -- REST_ID로 그룹화
+    HAVING B.ADDRESS LIKE '서울%'   -- 서울로 시작하는 주소를 가져옴
+    ORDER BY SCORE DESC, B.FAVORITES DESC;  -- 각각을 조건에 맞게 정렬
+```
+
+### 조건에 부합하는 중고거래 댓글 조회하기
