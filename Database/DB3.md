@@ -274,3 +274,45 @@ Related manager
 - 이처럼 페이지의 일부 내용만 업데이트 하는 것은 JavaScript의 영역이기 때문에 JavaScript를 학습한 후 별도로 진행하도록 함
 
 (p.69)
+Comment 추가 사항
+- 댓글에 관련된 아래 2가지 사항을 작성하며 마무리
+    1. 댓글 개수 출력
+        1. DTL filter - length 사용
+        2. Queryset API - count() 사용
+    2. 댓글이 없는 경우 대체 컨텐츠 출력하기
+
+댓글 개수 출력하기
+1. DTL filter -lenth 사용
+```html
+    {{comment|length}}
+    {{article.commnet_set.all|length}}
+```
+2. Queryset API - count() 사용
+```html
+    {{comment|length}}
+    {{article.commnet_set.count}}
+```
+- detail 템플릿에 작성
+```html
+    <h4>댓글 목록</h4>
+    {% if comments %}
+        <p><b>{{ comments|length }}개의 댓글이 있습니다.</b></p>
+    {% endif %}
+```
+
+댓글이 없는 경우 대체 컨텐츠 출력
+- DTL for empty 활용
+```html
+    {% for comment in comments %}
+        <li>
+            {{ comment.content }}
+            <form action="{% url 'articles:commnets_delete' article.pk commnet.pk %}" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="DELETE">
+            </form>
+        </li>
+    {% empty %}
+        <p>댓글이 없어요...</p>
+    {% endfor %}
+```
+
