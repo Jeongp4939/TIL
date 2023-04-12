@@ -1,3 +1,0 @@
-function barking(){
-  alert("Aaaaaaaaaaaaaaa")
-}
