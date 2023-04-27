@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 여기서 view에 보여짐/ 화면에 출력됨(새로고침 없이 바로) -->
+        <!-- {{}} 안에는 변수 명이 들어가는데... data 객체의 속성 값 message가 {{}}를 통해서 message 변수에 접근이 가능 -->
+        <p id="name">name : {{ message }} </p>
+        <input type="text" v-model="message">
+        <!-- v-model을 통해서 입력 된 후 -->
+        <!-- v-model은 <input> 태그에 쓰이고, <input>태그가 나오면 무조건 v-model을 사용한다 -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({ //1. vue 객체 생성(new를 써주는 이유는 vue가 제공하는 객체의 '생성자 함수'선언 -> vue instance 생성)
+            el:'#app', //2. elements에 view(dom)의 id를 적어 줌으로써 id가 "app"인 DOM과 연결함(<div id="app">)
+            data:{  // 3. data는 vue 인스턴스가 사용할 정보를 가지고 있는 저장하는 속성이다.
+                message:'', // vue 인스턴스와 연결되어 있는 앱에 적용시킬 data 객체를 추가해 준것
+            },  // message에 들어갈 값이.
+            methods:{
+                print:function(){  
+                    console.log(this.message)
+                },
+            },
+        })
+        console.log(app)
+    </script>
+
+</body>
+</html>
