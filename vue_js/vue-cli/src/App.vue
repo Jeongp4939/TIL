@@ -3,7 +3,6 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- 3. 사용한다 -->
     <MyComponent msg="Welcome to MyComponent"/>
-    <MyComponent msg="Welcome to MyComponent"/>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

@@ -1,13 +1,35 @@
 <template>
   <div>
     <h3>This is Child component</h3>
-    <a href="">건드리면 물어요</a>
+    <p>{{ staticProps }}</p>
+    <p>{{ dynamicProps }}</p>
+    <button @click="childToParent">클릭!</button>
+    <input type="text" v-model="childInputData" @keyup.enter="childInput">
   </div>
 </template>
 
 <script>
 export default {
-    name: 'MyChild'
+    name: 'MyChild',
+    data: function () {
+      return {
+        childInputData: null,
+      }
+    },
+    props: {
+      staticProps: String,
+      dynamicProps: String,
+    },
+    methods: {
+      childToParent: function () {
+        this.$emit('child-to-parent', 'childdata')
+      },
+      childInput: function () {
+        this.$emit('child-input', this.childInputData)
+        this.childInputData = ""
+      }
+    }
+
 }
 </script>
 
