@@ -10,6 +10,10 @@ Today I Learned
 
 # Unity
 
+### 시작
+- 3D로 생성
+- 3D(URP) : Universal Render Pipeline
+  - 기존 3D에 비해 조금 더 무거움
 ### Unity로 제작 가능한 것
 - 게임, 영화, 에니메이션 모두 가능
 
@@ -33,3 +37,34 @@ Today I Learned
 
 ### 도움이 될 만한 것
 - UModelerX : 제페토 등
+
+
+### Collider
+- 바닥은 Mesh Collider 를 쓰는게 좋다
+  - box Collider를 사용할 시 바닥을 뚫고 자유낙하하는 버그가 발생할 수 있다.
+- Collider는 모양에 맞는것을 써야 성능 저하를 막을 수 있다.
+
+### Essets
+- Creator Kit:Puzzle
+  - Unity 자체 제작 에셋
+  - 내부에 레벨을 디자인 하는 등의 여러 기능들이 들어있음
+  - Prefabs에 가면 다른 도구들도 선택 가능
+    - 드래그앤 드롭으로 사용 가능
+
+
+### 폴더 구조
+01. Scenes
+02. Materials
+03. Textures
+04. Scripts
+  - 04-1. LobbyScripts
+  - 04-2. Minigame 1
+05. Models
+06. Prefabs
+07. Res
+
+
+### Scripts
+#### Script 생성 시 주의점
+- 만들 때 이름을 먼저 작성 한 뒤 생성 완료를 할 것
+- 추후 변경하려 할 시에 오류가 발생할 가능성이 높음
