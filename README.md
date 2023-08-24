@@ -19,7 +19,9 @@ Today I Learned
   - Component : 속성에 해당하는 부분
  
 ### 단축키
-- 물체를 찾을 때 : F를 누르면 해당 오브젝트로 이동(Focus)
+- 물체를 찾을 때 : F(Focus)를 누르면 해당 오브젝트로 이동
+- QWERTY 자판으로 커서 역할 변경 가능
+- V(Vertex snapping)를 누르면 자동으로 다른 오브젝트에 붙게 할 수 있음(누른상태 유지)
 
 ### 모델링 추가할 때
 - OBJ : 애니메이션 X
@@ -27,6 +29,7 @@ Today I Learned
 - MeshRenderer -> Material : 내부에 배열 형태로 저장됨
 - 스카이박스
   - Window->Rendering->Lighting->Environment->SkyBox
+    
 
 ### 도움이 될 만한 것
 - UModelerX : 제페토 등
