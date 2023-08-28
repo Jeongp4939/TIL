@@ -64,7 +64,74 @@ Today I Learned
 07. Res
 
 
-### Scripts
+## Scripts
 #### Script 생성 시 주의점
 - 만들 때 이름을 먼저 작성 한 뒤 생성 완료를 할 것
 - 추후 변경하려 할 시에 오류가 발생할 가능성이 높음
+
+#### public
+- public으로 전역변수를 선언 시 unity에서 확인이 가능 함
+- but, Unity에서 입력된 값이 우선되기 때문에 주의
+
+#### [SerializeField]
+- unity에서 확인은 가능
+- 인스펙터에서 접근 가능하지만, 외부 스크립트에서 접근 불가능함
+
+### 이동
+
+#### Time.deltaTime
+- sec를 기반으로 작동하는 시간
+- 컴퓨터마다 frame 등 성능이 다르기 때문에 사용함
+
+#### transform.Traslate
+```
+  transform.Translate(h * Vector3.right);
+  transform.Translate(v * Vector3.forward);
+```
+- right : 오른쪽
+- forward : 앞
+
+- 반대키가 Negative를 해주어서 한 방향만 해주면 됨
+
+- 회전 : X가 위아래, Y가 좌우
+
+#### 컴포넌트 사용
+- 컴포넌트를 가져올 때는 start에서 한번 더 선언을 해주어야함
+```
+  ex = GetComponent<Example>();
+```
+
+
+# 23.08.28
+
+- 새로운 씬을 생성시 라이트의 강도와 색상을 조정(환경 정보)
+
+### 크기의 단위
+- Plane 1의 크기(MR,XR): 10M
+- Object : 1M
+- Sphere : 지름 1M
+
+### Open World와 Colosed World
+- 어떤 공간을 기준으로 할 지 생각(오픈과 클로즈)
+  - 렌더링 시에 문제가 생길 수 있음
+- 씬의 로딩에 대해 고민을 해보아야함
+
+### 프로토 타입 만들 시 주의
+- 에셋을 먼저 넣지 말 것
+- 기본 오브젝트로 생성을 완료한 뒤에 에셋을 씌워주는것이 일반적
+
+### 시네마 씬(Unity Registry)
+- window -> Package Manager -> Pakages: 4종류 중 선택 / 없는 것을 가져오고 싶다면 Project Settings -> Package Manager에서 외부 패키지를 가져와서 사용할 수 있음
+- CinemaChine
+- ARFoundation(증강현실 만들 때 사용)
+- AR Core(안드로이드 전용)
+- ARKit(ios)
+- XR Interaction Toolkit(VR기기)
+- Visual Scripting(block coding Unreal의 블루프린트와 비슷함)
+
+### Player Camera
+- CinemaChine -> VirtualCamera -> Follow, Look at 설정
+
+### Input 기능 생성
+- Script : input Manager
+- Project Settings 내부의 Input Manager를 이용 할 수 있음
