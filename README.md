@@ -135,3 +135,22 @@ Today I Learned
 ### Input 기능 생성
 - Script : input Manager
 - Project Settings 내부의 Input Manager를 이용 할 수 있음
+
+
+---
+# 23.08.30
+
+### 폭발 에셋 War FX
+- 에셋을 가져와 사용할 때 해당 에셋의 스크립트 삭제
+
+### 프리팹
+- 재사용 가능한 에셋
+- 하이어라키에서 프리팹 폴더로 보내놓으면 프리팹 생성 완료
+- 다시 사용시 다시 하이어라키로 올리면 복제되어 생성됨
+
+
+### 레이어
+- 레이어를 다르게 생성한 후
+- edit->project settings->py
+
+### Raycast와 Ray를 이용해 총의 발사를 구현할 수 있음
