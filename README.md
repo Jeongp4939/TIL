@@ -154,3 +154,20 @@ Today I Learned
 - edit->project settings->py
 
 ### Raycast와 Ray를 이용해 총의 발사를 구현할 수 있음
+
+---
+
+# 23.09.04
+
+### switch case를 통해 NPC의 행동을 등록할 수 있음
+- Idle : 보통 상태
+- Move
+- Attack 등
+
+### 길따라 플레이어를 따라가게 하는것
+- NavMesh
+
+### Animation
+- hasExitTime이 체크되어 있으면 애니메이션에 딜레이가 생길 수 있음
+- Attack의 경우 Loop Time을 해제
+- Trigger 등의 파라미터를 생성하고, Code를 통해 Animation의 작동을 조정가능
