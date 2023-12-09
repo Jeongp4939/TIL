@@ -218,3 +218,11 @@ Monolithic <-> MSA
 - Gitlab 등 저장소와 연동하여 배포
 
 - MFA -> 프론트의 MSA
+
+
+# React
+
+### Create React App
+```
+npx create-react-app {경로}
+```
