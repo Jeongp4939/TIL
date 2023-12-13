@@ -35,9 +35,18 @@ int main()
   ```
 - vector
   ```
-  vector<int> vec;
+  vector<type> vec; // 빈 vector
+  vector<type> vec(n); // 숫자만큼 백터 생성 후 0으로 초기화
+  vector<type> 변수명={변수1, 변수2, 변수3...}; // 백터 생성 후 오른쪽 변수 값으로 초기화
+  vector<vector<자료형>> 변수명; 2차원 벡터 생성
   ```
 - deque
+  ```
+  deque<type> dq; // 빈컨테이너
+  deque<type> dq(n); // 0으로 초기화된 n개의 원소
+  deque<type> dq(n,x); // x로 초기화된 n개의 원소
+  deque<type> dq(iterator begin, iterator end); //iterator begin 부터 end 구간으로 초기화된 원소
+  ```
 - list/forward_list
 - set/multiset
 - map/multiplemap
