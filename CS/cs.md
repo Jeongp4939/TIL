@@ -80,3 +80,10 @@
   - 공통점은 웹 통신에서 `유지하려는 정보(로그인, 기록 등)`를 저장하기 위해 사용
   - HTTP 프로토콜의 특징이면서, 약점인 connectionaless(비연결 지향), stateless(상태정보 유지X)fmf qhdhksgkrl dnlgo tkdyd
   - 가장 큰 차이점은 `상태 정보 저장 위치`로, 쿠키는 상태정보를 `사용자 브라우저`에 저장하지만, 세션은 `서버`에 저장
+
+2. REST API에 대해 설명
+  - REST 는 Representational State Transfer의 줄임말로, HTTP를 용도에 맞게 최대한 활용할 수 있게 구성한 아키텍처
+  - 자원(Resource) / 행도(Verb) / 표현(Representations)로 구성되며, 두가지 핵심적인 설계철학이 존재
+    - URI는 정보의 자원을 표현 EX) www.홈페이지.com/users/newuser
+    - 요청(행동)은 HTTP Method(CRUD)로 표현되어야 한다
+  - 이런 REST API를 만족하는 서비스 : RESTful하다고 표현
