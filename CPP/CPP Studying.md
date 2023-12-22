@@ -47,7 +47,7 @@ int main()
   deque<type> dq(n,x); // x로 초기화된 n개의 원소
   deque<type> dq(iterator begin, iterator end); //iterator begin 부터 end 구간으로 초기화된 원소
   ```
-- list/forward_list
+- list/forward_list 
 - set/multiset
 - map/multiplemap
 - unordered_set/unordered_map/unordered_multiset/unordered_multimap
