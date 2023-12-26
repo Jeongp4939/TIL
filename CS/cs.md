@@ -88,4 +88,4 @@
     - 요청(행동)은 HTTP Method(CRUD)로 표현되어야 한다
   - 이런 REST API를 만족하는 서비스 : RESTful하다고 표현
 
-3.  
+3.    
