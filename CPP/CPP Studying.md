@@ -69,4 +69,5 @@ int main()
 - for_each
 - generate
 - binary_search
+- max_element
 - 
